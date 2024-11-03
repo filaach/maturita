@@ -26,7 +26,7 @@
 
     <div class="login-container">
         <h2>Přihlášení</h2>
-        <form action="login.php" method="POST">
+        <form action="/login.php" method="POST">
             <label for="username">Uživatelské jméno:</label>
             <input type="text" id="username" name="username" required>
 
