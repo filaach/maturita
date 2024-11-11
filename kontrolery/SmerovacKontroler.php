@@ -8,6 +8,7 @@ class SmerovacKontroler extends Kontroler
     public function zpracuj(array $parametry): void
     {
         $naparsovanaURL = $this->parsujURL($parametry[0]);
+        
         if (empty($naparsovanaURL[0]))
             $this->presmeruj('clanek/login');
         $tridaKontroleru = $this->pomlckyDoVelbloudiNotace(array_shift($naparsovanaURL)) . 'Kontroler';
