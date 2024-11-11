@@ -4,25 +4,26 @@
 
         if (passwordField.type === "password") {
             passwordField.type = "text";
-            eyeIcon.setAttribute("fill", "#333"); // Změní barvu ikony při zobrazení hesla
+            eyeIcon.setAttribute("fill", "#333");
         } else {
             passwordField.type = "password";
-            eyeIcon.setAttribute("fill", "none"); // Změní barvu ikony při skrytí hesla
+            eyeIcon.setAttribute("fill", "none");
         }
     }
 </script>
 
 <div class="login-container">
-    <h2>Přihlášení</h2>
-    <form method="POST">
+    <form method="POST" class="login-form">
+        <h2>Přihlášení</h2>
         <label for="username">Uživatelské jméno:</label>
+        <div class ="username-container">
         <input type="text" id="username" name="username" required>
+        </div>
 
         <label for="password">Heslo:</label>
         <div class="password-container">
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required/>
             <span id="toggle-password" onclick="togglePasswordVisibility();">
-                <!-- SVG ikona oka -->
                 <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -34,7 +35,6 @@
 
 
         <button type="submit">Přihlásit se</button>
-
+        <p>Nemáte účet? <a href="/register">Registrujte se</a></p>
     </form>
-    <p>Nemáte účet? <a href="/register">Registrujte se</a></p>
 </div>

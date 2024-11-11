@@ -8,9 +8,9 @@ class SmerovacKontroler extends Kontroler
     public function zpracuj(array $parametry): void
     {
         $naparsovanaURL = $this->parsujURL($parametry[0]);
-        
+
         if (empty($naparsovanaURL[0]))
-            $this->presmeruj('clanek/login');
+            $this->presmeruj('clanek/prispevky');
         $tridaKontroleru = $this->pomlckyDoVelbloudiNotace(array_shift($naparsovanaURL)) . 'Kontroler';
 
         if (file_exists('kontrolery/' . $tridaKontroleru . '.php'))
@@ -23,6 +23,7 @@ class SmerovacKontroler extends Kontroler
         $this->data['titulek'] = $this->kontroler->hlavicka['titulek'];
         $this->data['popis'] = $this->kontroler->hlavicka['popis'];
         $this->data['klicova_slova'] = $this->kontroler->hlavicka['klicova_slova'];
+        $this->data['stylesheet'] = $this->kontroler->hlavicka['stylesheet'];
 
         $this->pohled = 'rozlozeni';
 
