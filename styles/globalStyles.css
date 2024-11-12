@@ -45,6 +45,7 @@ body {
   width: 100%;
   text-align: center;
   transition: background-color 0.3s ease;
+  font-size: 1.5rem;
 }
 
 .menu-items > *:last-child{
@@ -57,7 +58,7 @@ body {
 }
 
 .menu-items > *:hover {
-  background-color: #8c1e9d62;
+  background-color: #d881e6;
 }
 .menu-items a {
   text-decoration: none;
