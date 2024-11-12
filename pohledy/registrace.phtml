@@ -1,6 +1,6 @@
 <div class="login-container">
     <form method="POST" class="login-form">
-        <h2>Přihlášení</h2>
+        <h2>Registrace</h2>
         <label for="username">Uživatelské jméno:</label>
         <div class ="username-container">
         <input type="text" id="username" name="username" required>
@@ -18,9 +18,21 @@
             </span>
         </div>
 
+        <label for="password-repeat">Heslo znovu:</label>
+        <div class="password-container">
+            <input type="password" id="password-repeat" name="password-repeat" required/>
+            <span id="toggle-password" onclick="togglePasswordVisibility();">
+                <svg id="eye-icon-repeat" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </span>
+        </div>
+
 
 
         <button type="submit">Přihlásit se</button>
-        <p>Nemáte účet? <a href="/registrace">Registrujte se</a></p>
+        <p>Máte účet? <a href="/login">Přihlašte se</a></p>
     </form>
 </div>

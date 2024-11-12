@@ -3,7 +3,7 @@ abstract class Kontroler
 {
     protected array $data = array();
     protected string $pohled = "";
-    protected array $hlavicka = array('titulek' => '', 'klicova_slova' => '', 'popis' => '');
+    protected array $hlavicka = array('titulek' => '', 'klicova_slova' => '', 'popis' => '', 'stylesheet' => '', 'skripty' => array());
     abstract function zpracuj(array $parametry): void;
     public function vypisPohled(): void
     {
