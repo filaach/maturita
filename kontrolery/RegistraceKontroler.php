@@ -1,5 +1,5 @@
 <?php
-class LoginKontroler extends Kontroler
+class RegistraceKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
@@ -7,7 +7,9 @@ class LoginKontroler extends Kontroler
             'titulek' => 'Registrace',
             'popis' => 'Stránka pro registrace',
             'klicova_slova' => 'login, formulář, registrace',
-            'stylesheet' => 'registraceStyles.css'
+            'stylesheet' => 'registraceStyles.css',
+            'skripty' => ['togglePassword.js']
+
         ];
         $this->pohled = 'registrace';
     }
