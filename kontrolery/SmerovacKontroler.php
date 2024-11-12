@@ -20,10 +20,17 @@ class SmerovacKontroler extends Kontroler
 
         $this->kontroler->zpracuj($naparsovanaURL);
 
+        $skripty = [];
+
+        foreach ($this->kontroler->hlavicka['skripty'] as $skript) {
+            array_push($skripty, '<script type="text/javascript" src="skripty/' . $skript . '"></script>');
+        }
+
         $this->data['titulek'] = $this->kontroler->hlavicka['titulek'];
         $this->data['popis'] = $this->kontroler->hlavicka['popis'];
         $this->data['klicova_slova'] = $this->kontroler->hlavicka['klicova_slova'];
         $this->data['stylesheet'] = $this->kontroler->hlavicka['stylesheet'];
+        $this->data['skripty'] = join("\n", $skripty);
 
         $this->pohled = 'rozlozeni';
 

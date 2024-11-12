@@ -7,7 +7,8 @@ class LoginKontroler extends Kontroler
             'titulek' => 'Přihlášení',
             'popis' => 'Přihlašovací stránka',
             'klicova_slova' => 'přihlášení, login, formulář, registrace',
-            'stylesheet' => 'loginStyles.css'
+            'stylesheet' => 'loginStyles.css',
+            'skripty' => ['togglePassword.js']
         ];
         $this->pohled = 'login';
     }
