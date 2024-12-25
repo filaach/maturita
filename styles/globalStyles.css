@@ -6,7 +6,7 @@ html body{
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background: linear-gradient(to right bottom, #8c1e9d, #3a033b);
+  background: linear-gradient(to right bottom, #000000, #292828);
 }
 
 .header {
@@ -58,7 +58,7 @@ body {
 }
 
 .menu-items > *:hover {
-  background-color: #d881e6;
+  background-color: #929092;
 }
 .menu-items a {
   text-decoration: none;

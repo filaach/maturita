@@ -20,9 +20,54 @@
 }
 
 .ucet-container a:hover{
-    background-color: #d881e6;
+    background-color: #343234;
 }
 
 .ucet-nastaveni .h1{
+    color:rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 8px;
+
     
 }
+
+.ucet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+    padding: 20px;
+    width: 250px;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    background: linear-gradient(135deg, #636262, #E0E0E0);
+  }
+  
+  .ucet-container a {
+    text-decoration: none;
+    color: #5a5a5a;
+    font-size: 16px;
+    margin: 10px 0;
+    transition: color 0.2s ease;
+  }
+  
+  .ucet-container a:hover {
+    color: #39343e; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nastaveni-container {
+      width: 100%;
+      position: static;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  
+    .ucet-container a {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+  

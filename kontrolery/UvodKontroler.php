@@ -1,14 +1,14 @@
 <?php
-class UcetKontroler extends Kontroler
+class UvodKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
         Databaze::pripoj('localhost', 'root', '', 'maturita');
         $this->hlavicka = [
-            'titulek' => 'Účet',
-            'popis' => 'Stránka pro správu účtu',
-            'klicova_slova' => 'úřet, login, registrace, přihlášení, správa, nastavení',
-            'stylesheet' => 'ucetStyles.css',
+            'titulek' => 'Úvod',
+            'popis' => 'Stránka pro správu úvodu',
+            'klicova_slova' => 'úvod,',
+            'stylesheet' => 'uvodStyles.css',
             'skripty' => []
         ];
 
@@ -20,11 +20,12 @@ class UcetKontroler extends Kontroler
             
         }
 
-        $this->pohled = 'ucet/' . $parametry[0];
+        $this->pohled = 'uvod/' . $parametry[0];
 
 
 
     }
 
+    
 
 }
