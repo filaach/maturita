@@ -6,7 +6,8 @@ html body{
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background: linear-gradient(to right bottom, #000000, #292828);
+  /*background: linear-gradient(to right bottom, #000000, #292828);*/
+  background: linear-gradient(to right bottom, #929092, #292828);
 }
 
 .header {
@@ -37,30 +38,35 @@ body {
   border-radius: 7px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 8px;
+  
 }
 
-.menu-items > * {
+.menu-items > a {
   padding: 0.5rem 0;
   border-right: 1px solid black;
   width: 100%;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
   font-size: 1.5rem;
+  color: #5a5a5a;
+  background-color: white;
 }
 
-.menu-items > *:last-child{
+.menu-items > a:last-child{
     border-right: none;
     border-radius: 0 7px 7px 0;
 }
 
-.menu-items > *:first-child{
+.menu-items > a:first-child{
     border-radius: 7px 0 0 7px;
 }
 
-.menu-items > *:hover {
+.menu-items > a:hover {
   background-color: #929092;
+  color: #39343e;
+
 }
 .menu-items a {
   text-decoration: none;
-  color: black;
 }

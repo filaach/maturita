@@ -10,7 +10,8 @@ class SmerovacKontroler extends Kontroler
         $naparsovanaURL = $this->parsujURL($parametry[0]);
 
         if (empty($naparsovanaURL[0]))
-            $this->presmeruj('clanek/prispevky');
+            $this->presmeruj('prispevky');
+
         $tridaKontroleru = $this->pomlckyDoVelbloudiNotace(array_shift($naparsovanaURL)) . 'Kontroler';
 
         if (file_exists('kontrolery/' . $tridaKontroleru . '.php'))
