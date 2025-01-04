@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.imgtl{
+    position: absolute;
+    top: 4rem;
+    left: 10rem;
+    z-index: 999;
+    transform: scale(0.8);
+}
+
+.imgbl{
+    position: absolute;
+    top: 32rem;
+    left: 12rem;
+    z-index: 10;
+    transform: rotate(7deg) scale(0.8);
+
+}
+
+.imgr{
+    position: absolute;
+    top: 25rem;
+    right: 12rem;
+    z-index: 10;
+    transform: scale(0.8);
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.intro-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #343333;
+    font-style: italic;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.left img,
+.right img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.center {
+    line-height: 1.6;
+    background-color: #343333;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+}
+
+.center p {
+    margin-bottom: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #343333;
+    border-radius: 15px;
+    position: relative;
+    bottom: 80px;
+    padding: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #343333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #448844;
+}
+
+.continue-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+    background-color: #448844;
+}
