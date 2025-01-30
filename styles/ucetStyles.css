@@ -1,83 +1,82 @@
-.ucet-container {
-  width: 100%;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ucet-nastaveni {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 50px;
+  margin-top: 20px;
 }
 
-.ucet-container a {
-  text-decoration: none;
-  color: black;
-  font-size: 1.3rem;
-  background-color: white;
-  border-radius: 12px;
-  padding: 7px;
-  box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 8px;
-  transition: background-color 0.3s ease;
-}
-
-.ucet-container a:hover {
-  background-color: #343234;
-}
-
-.ucet-nastaveni .h1 {
-  color: rgb(255, 255, 255);
-  text-shadow: rgba(0, 0, 0, 0.8) 3px 3px 8px;
-
-
+.ucet-nastaveni h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .nav-container {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
-  padding: 20px;
-  width: 250px;
-  position: absolute;
-  right: 20px;
-  top: 200px;
-  background: linear-gradient(135deg, #636262, #E0E0E0);
-}
-
-.nav-container nav{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: flex-end;
 }
 
-.nav-container a {
+.nav-container nav a {
   text-decoration: none;
-  color: #5a5a5a;
   font-size: 16px;
-  transition: color 0.5s ease;
-  transition: background-color 0.5s ease;
-  background-color: white;
-  padding: 0.5rem 0;
+  color: #007bff;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-container nav a:hover {
+  color: #0056b3;
+}
+
+.hlavni-obsah {
+  flex: 1;
+  padding: 20px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   width: 100%;
-  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-.nav-container a:hover {
-  color: #39343e;
-  background-color: #929092;
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
-@media screen and (max-width: 768px) {
-  .nastaveni-container {
-    width: 100%;
-    position: static;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .ucet-container a {
-    font-size: 18px;
-    text-align: center;
-  }
+button:hover {
+  background-color: #0056b3;
 }

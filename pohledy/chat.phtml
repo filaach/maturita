@@ -1,0 +1,37 @@
+<div class="chat-container">
+    <h1>Chatovací místnost</h1>
+
+    <?php if (!empty($uzivatele)): ?>
+        <div class="users-list">
+            <h2>Uživatelé</h2>
+            <ul>
+                <?php foreach ($uzivatele as $uzivatel): ?>
+                    <li>
+                        <a href="?prijemce_id=<?= htmlspecialchars($uzivatel['id']) ?>">
+                            <?= htmlspecialchars($uzivatel['userName']) ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
+    <?php if (!empty($zpravy)): ?>
+        <div class="chat-messages">
+            <h2>Chat</h2>
+            <?php foreach ($zpravy as $zprava): ?>
+                <div class="message">
+                    <strong><?= htmlspecialchars($zprava['odesilatel_id'] == 1 ? 'Já' : 'Oni') ?>:</strong>
+                    <?= htmlspecialchars($zprava['zprava']) ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <form method="post">
+            <textarea name="zprava" placeholder="Napište zprávu..." required></textarea>
+            <button type="submit">Odeslat</button>
+        </form>
+    <?php else: ?>
+        <p>Vyberte uživatele, se kterým chcete chatovat.</p>
+    <?php endif; ?>
+</div>

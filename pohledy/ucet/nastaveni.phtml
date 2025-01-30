@@ -1,12 +1,76 @@
-<div class="ucet-nastaveni">
-    <h1 class="h1">Nastavení</h1>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastavení</title>
+    <!-- Link na CSS -->
+    <link rel="stylesheet" href="styles/nastaveniStyles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Nastavení</h1>
 
-    <div class="nav-container">
-        <nav>
-            <a href="ucet/nastaveni">Nastavení</a>
-            <a href="ucet/info">Info</a>
-            <a href="ucet/statistiky">Statistiky</a>
-            <a href="ucet/profil">Profil</a>
-        </nav>
-    </div>
+    <!-- Základní nastavení -->
+    <section>
+        <h2>Základní nastavení</h2>
+        <form method="post" action="zmenitUdaj.php">
+            <div>
+                <label for="jmeno">Jméno:</label>
+                <input type="text" id="jmeno" name="jmeno" value="" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" value="" required>
+            </div>
+            <button type="submit">Uložit změny</button>
+        </form>
+    </section>
+
+    <!-- Změna hesla -->
+    <section>
+        <h2>Změna hesla</h2>
+        <form method="post" action="zmenitHeslo.php">
+            <div>
+                <label for="stare-heslo">Staré heslo:</label>
+                <input type="password" id="stare-heslo" name="stare-heslo" required>
+            </div>
+            <div>
+                <label for="nove-heslo">Nové heslo:</label>
+                <input type="password" id="nove-heslo" name="nove-heslo" required>
+            </div>
+            <div>
+                <label for="potvrzeni-hesla">Potvrzení nového hesla:</label>
+                <input type="password" id="potvrzeni-hesla" name="potvrzeni-hesla" required>
+            </div>
+            <button type="submit">Změnit heslo</button>
+        </form>
+    </section>
+
+    <!-- Soukromí -->
+    <section>
+        <h2>Soukromí</h2>
+        <form method="post" action="nastaveniSoukromi.php">
+            <div>
+                <label>
+                    <input type="checkbox" name="verejny-ucet" checked>
+                    Veřejný účet
+                </label>
+            </div>
+            <button type="submit">Uložit nastavení</button>
+        </form>
+    </section>
+
+    <!-- Odstranění účtu -->
+    <section>
+        <h2>Další možnosti</h2>
+        <form method="post" action="smazatUcet.php" onsubmit="return confirm('Opravdu chcete smazat svůj účet?')">
+            <button type="submit" class="danger">Smazat účet</button>
+        </form>
+        <form method="post" action="odhlasit.php">
+            <button type="submit">Odhlásit se</button>
+        </form>
+    </section>
 </div>
+</body>
+</html>

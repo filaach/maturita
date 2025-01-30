@@ -1,0 +1,30 @@
+<h1>Vytvořit nový příspěvek</h1>
+
+<!-- Zobrazení zpráv -->
+<?php if (!empty($zpravy)): ?>
+    <div class="zpravy">
+        <?php foreach ($zpravy as $zprava): ?>
+            <p class="<?= $zprava['typ'] === 'chyba' ? 'chyba' : 'uspech' ?>">
+                <?= htmlspecialchars($zprava['text']) ?>
+            </p>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+<!-- Formulář pro přidání příspěvku -->
+<form method="post">
+    <div class="formular-polozka">
+        <label for="obsah">Obsah příspěvku:</label>
+        <textarea id="obsah" name="obsah" placeholder="Napište příspěvek..." required></textarea>
+    </div>
+    <div class="formular-polozka">
+        <label for="typ">Typ příspěvku:</label>
+        <select id="typ" name="typ" required>
+            <option value="">Vyberte typ...</option>
+            <option value="populární">Populární</option>
+            <option value="strava">Strava</option>
+            <option value="cvičení">Cvičení</option>
+        </select>
+    </div>
+    <button type="submit">Přidat příspěvek</button>
+</form>

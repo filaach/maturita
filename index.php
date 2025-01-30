@@ -1,4 +1,5 @@
 <?php
+session_start();
 mb_internal_encoding("utf-8");
 
 function autoloadFunkce(string $trida): void

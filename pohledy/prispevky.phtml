@@ -1,3 +1,69 @@
-<div class="prispevky-container">
-    <h2>Prispevky</h2>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Příspěvky</title>
+    <!-- Připoj svůj CSS -->
+    <link rel="stylesheet" href="prispevkyStyles.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Levý panel -->
+    <div class="left-panel panel">
+        <h2>Hledat a přidat</h2>
+
+        <!-- Vyhledávání v jednom řádku -->
+        <form method="get" class="search-container">
+            <input 
+               type="text" 
+               name="hledat" 
+               placeholder="Hledat uživatele..." 
+               class="search-input"
+            >
+            <button type="submit" class="btn search-btn">
+                Hledat
+            </button>
+        </form>
+
+        <!-- Tlačítko pro nahrání příspěvku -->
+        <form method="get" action="vytvoritPrispevek">
+            <button type="submit" class="btn">Nahrát příspěvek</button>
+        </form>
+    </div>
+
+    <!-- Střední panel (Příspěvky) -->
+    <div class="middle-panel panel">
+        <h1>Příspěvky</h1>
+        <div class="prispevky-list">
+            <?php if (!empty($prispevky)): ?>
+                <?php foreach ($prispevky as $prispevek): ?>
+                    <div class="prispevek">
+                        <p><?= htmlspecialchars($prispevek['obsah']) ?></p>
+                        <span>
+                            <?= htmlspecialchars($prispevek['typ']) ?> 
+                            – 
+                            <?= htmlspecialchars($prispevek['datum']) ?>
+                        </span>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Žádné příspěvky nebyly nalezeny.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Pravý panel (Filtry) -->
+    <div class="right-panel panel">
+        <h2>Filtry</h2>
+        <!-- Box pro filtry -->
+        <div class="filters-box">
+            <a href="?filtr=strava">Strava</a>
+            <a href="?filtr=cviceni">Cvičení</a>
+            <a href="?">Všechny</a>
+        </div>
+    </div>
 </div>
+
+</body>
+</html>
