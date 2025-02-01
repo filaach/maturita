@@ -31,15 +31,22 @@
                 <label for="typ">Typ příspěvku:</label>
                 <select id="typ" name="typ" required>
                     <option value="">Vyberte typ...</option>
-                    <option value="cviceni">Cvičení</option>
-                    <option value="jidlo">Jídlo</option>
+                    <option value="excercise">Cvičení</option>
+                    <option value="food">Jídlo</option>
+                    <option value="other">Ostatní</option>
                 </select>
             </div>
             <div class="formular-polozka">
                 <label for="soubor">Nahrajte obrázek nebo video:</label>
-                <input type="file" id="soubor" name="soubor" accept="image/*,video/*">
+                <input type="file" id="soubor" name="soubor" accept="image/*">
             </div>
             <button type="submit">Přidat příspěvek</button>
+            <?php if ( isset($_GET['zprava']) && $_GET['zprava'] === 'uspech'): ?>
+                <span>Úspěšně odesláno</span>
+            <?php endif; ?>
+            <?php if ( isset($_GET['zprava']) && $_GET['zprava'] === 'chyba'): ?>
+                <span class="chyba">Chyba</span>
+            <?php endif; ?>
         </form>
     </div>
 </body>

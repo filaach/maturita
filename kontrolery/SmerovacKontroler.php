@@ -28,12 +28,12 @@ class SmerovacKontroler extends Kontroler
         }
 
         $this->data['titulek'] = $this->kontroler->hlavicka['titulek'] ?? 'Výchozí titulek';
-$this->data['popis'] = $this->kontroler->hlavicka['popis'] ?? 'Výchozí popis';
-$this->data['klicova_slova'] = $this->kontroler->hlavicka['klicova_slova'] ?? 'Výchozí klíčová slova';
-$this->data['stylesheet'] = $this->kontroler->hlavicka['stylesheet'] ?? 'styles/defaultStyles.css'; // Výchozí styl
-$this->data['skripty'] = isset($this->kontroler->hlavicka['skripty']) ? 
-    join("\n", array_map(fn($skript) => '<script type="text/javascript" src="skripty/' . $skript . '"></script>', $this->kontroler->hlavicka['skripty'])) 
-    : '';
+        $this->data['popis'] = $this->kontroler->hlavicka['popis'] ?? 'Výchozí popis';
+        $this->data['klicova_slova'] = $this->kontroler->hlavicka['klicova_slova'] ?? 'Výchozí klíčová slova';
+        $this->data['stylesheet'] = $this->kontroler->hlavicka['stylesheet'] ?? 'styles/defaultStyles.css'; // Výchozí styl
+        $this->data['skripty'] = isset($this->kontroler->hlavicka['skripty']) ?
+            join("\n", array_map(fn($skript) => '<script type="text/javascript" src="skripty/' . $skript . '"></script>', $this->kontroler->hlavicka['skripty']))
+            : '';
 
 
         $this->pohled = 'rozlozeni';

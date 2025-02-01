@@ -1,0 +1,129 @@
+/* Celkové nastavení */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ececec, #dcdcdc);
+    margin: 0;
+    padding: 0;
+}
+
+/* Kontejner */
+.container {
+    max-width: 600px;
+    background: white;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Nadpisy */
+h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+h2 {
+    font-size: 22px;
+    color: #444;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Formuláře */
+form {
+    margin: 20px 0;
+}
+
+form div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Inputy */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Tlačítka */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Tlačítko pro odblokování */
+button.unblock {
+    background: #28a745;
+    margin-left: 10px;
+}
+
+button.unblock:hover {
+    background: #218838;
+}
+
+/* Nebezpečné tlačítko */
+button.danger {
+    background: #dc3545;
+}
+
+button.danger:hover {
+    background: #a71d2a;
+}
+
+/* Odhlášení */
+button.logout {
+    background: #f39c12;
+}
+
+button.logout:hover {
+    background: #e67e22;
+}
+
+/* Navigace */
+.ucet-nastaveni {
+    display: flex;
+    justify-content: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ucet-nastaveni nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.ucet-nastaveni nav a:hover {
+    background: #007bff;
+    color: white;
+}

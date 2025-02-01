@@ -1,4 +1,5 @@
 <?php
+require_once("modely/PrispevkyModel.php");
 class PrispevkyKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
@@ -12,6 +13,10 @@ class PrispevkyKontroler extends Kontroler
 
         ];
         $this->pohled = 'prispevky';
+
+        $this->prispevkyModel = new PrispevkyModel();
+
+        $this->data['prispevky'] = $this->prispevkyModel->vypisPrispevky();
     }
 
 }
