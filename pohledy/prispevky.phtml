@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Příspěvky</title>
-    <!-- Připoj svůj CSS -->
-    <link rel="stylesheet" href="prispevkyStyles.css">
+    <link rel="stylesheet" href="styles/prispevkyStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -15,11 +15,11 @@
         <div class="left-panel panel">
             <h2>Hledat a přidat</h2>
 
-            <!-- Vyhledávání v jednom řádku -->
+            <!-- Vyhledávání -->
             <form method="get" class="search-container">
                 <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input">
                 <button type="submit" class="btn search-btn">
-                    Hledat
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
 
@@ -27,24 +27,39 @@
             <form method="get" action="vytvoritPrispevek">
                 <button type="submit" class="btn">Nahrát příspěvek</button>
             </form>
+
+            <!-- Upozornění -->
+            <button class="btn btn-alert"><i class="fa-solid fa-bell"></i> Upozornění</button>
         </div>
 
         <!-- Střední panel (Příspěvky) -->
         <div class="middle-panel panel">
-            <h1>Příspěvky</h1>
+            
             <div class="prispevky-list">
                 <?php if (!empty($prispevky)): ?>
                     <?php foreach ($prispevky as $prispevek): ?>
                         <div class="prispevek">
-                            <p><?= htmlspecialchars($prispevek['text']) ?></p>
+                            <p></p?=  htmlspecialchars($prispevek['autor']) :  ?></p>
+                            
+                            <p class="prispevek-text">
+                                <?= htmlspecialchars($prispevek['text']) ?>
+                            </p>
                             <span>
-                                <?= htmlspecialchars($prispevek['type']) ?>
-                                –
+                                <?= htmlspecialchars($prispevek['type']) ?> –
+
                                 <?= htmlspecialchars($prispevek['dateOfCreation']) ?>
                             </span>
                             <?php if (isset($prispevek['picture'])): ?>
                                 <img src="<?= htmlspecialchars($prispevek['picture']) ?>" width="400" alt="Prispevek">
                             <?php endif; ?>
+
+                            <!-- Profesionální ikony -->
+                            <div class="prispevek-akce">
+                                <button class="action-btn"><i class="fa-regular fa-heart"></i></button> <!-- Like -->
+                                <button class="action-btn"><i class="fa-regular fa-comment"></i></button> <!-- Komentář -->
+                                <button class="action-btn"><i class="fa-solid fa-share"></i></button> <!-- Sdílení -->
+                                <button class="action-btn"><i class="fa-regular fa-bookmark"></i></button> <!-- Uložení -->
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -56,7 +71,6 @@
         <!-- Pravý panel (Filtry) -->
         <div class="right-panel panel">
             <h2>Filtry</h2>
-            <!-- Box pro filtry -->
             <div class="filters-box">
                 <a href="?filtr=strava">Strava</a>
                 <a href="?filtr=cviceni">Cvičení</a>
