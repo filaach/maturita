@@ -12,6 +12,8 @@ function autoloadFunkce(string $trida): void
 
 spl_autoload_register("autoloadFunkce");
 
+Databaze::pripoj('localhost','root','','maturita');
+
 $smerovac = new SmerovacKontroler();
 $smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
 $smerovac->vypisPohled();
