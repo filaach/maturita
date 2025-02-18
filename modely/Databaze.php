@@ -53,7 +53,7 @@ class Databaze
         return $navrat->rowCount();
     }
 
-    public static function vloz(string $dotaz, array $parametry = array()): int
+    public static function vloz(string $dotaz, array $parametry = array()): string | false
     {
         $navrat = self::$spojeni->prepare($dotaz);
         $navrat->execute($parametry);

@@ -97,10 +97,10 @@
     <!-- Sekce: Odhlášení a smazání účtu -->
     <section>
         <h2>Účet</h2>
-        <form method="post" action="odhlasit.php">
+        <form method="get" action="odhlasit">
             <button type="submit" class="logout">Odhlásit se</button>
         </form>
-        <form method="post" action="smazatUcet.php" onsubmit="return confirm('Opravdu chcete smazat svůj účet?')">
+        <form method="get" action="smazatUcet" onsubmit="return confirm('Opravdu chcete smazat svůj účet?')">
             <button type="submit" class="danger">Smazat účet</button>
         </form>
     </section>

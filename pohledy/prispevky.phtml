@@ -17,7 +17,7 @@
 
             <!-- Vyhledávání -->
             <form method="get" class="search-container">
-                <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input">
+                <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input" value="<?= isset($_GET['hledat']) ? $_GET['hledat'] : '' ?>">
                 <button type="submit" class="btn search-btn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -61,7 +61,7 @@
                 <?php if (!empty($prispevky)): ?>
                     <?php foreach ($prispevky as $prispevek): ?>
                         <div class="prispevek">
-                            <p></p?=  htmlspecialchars($prispevek['autor']) :  ?></p>
+                            <p><?=htmlspecialchars($prispevek['userName'])?></p>
                             
                             <p class="prispevek-text">
                                 <?= htmlspecialchars($prispevek['text']) ?>
@@ -78,10 +78,9 @@
 
                             <!--  ikony -->
                             <div class="prispevek-akce">
-                                <button class="action-btn"><i class="fa-regular fa-heart"></i></button> <!-- Like -->
-                                <button class="action-btn"><i class="fa-regular fa-comment"></i></button> <!-- Komentář -->
-                                <button class="action-btn"><i class="fa-solid fa-share"></i></button> <!-- Sdílení -->
-                                <button class="action-btn"><i class="fa-regular fa-bookmark"></i></button> <!-- Uložení -->
+                                <a class="action-btn" href="prispevky?like=<?= $prispevek['id'] ?>"><i class="fa-regular fa-heart"></i></a> <!-- Like -->
+                                <a class="action-btn" href="prispevky?comment=<?= $prispevek['id'] ?>"><i class="fa-regular fa-comment"></i></a> <!-- Komentář -->
+                                <a class="action-btn" href="prispevky?save=<?= $prispevek['id'] ?>><i class="fa-regular fa-bookmark"></i></a> <!-- Uložení -->
                             </div>
                         </div>
                     <?php endforeach; ?>

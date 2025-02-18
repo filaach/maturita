@@ -4,6 +4,9 @@ class VytvoritPrispevekKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
+        if(!isset($_SESSION['user_id'])) {
+            $this->presmeruj('login');
+        }
         $this->hlavicka = [
             'titulek' => 'Vytvořit nový příspěvek',
             'popis' => 'Přidání příspěvku s možností nahrání obrázků nebo videí.',

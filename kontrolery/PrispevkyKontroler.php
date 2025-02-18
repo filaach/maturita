@@ -17,6 +17,7 @@ class PrispevkyKontroler extends Kontroler
         $this->prispevkyModel = new PrispevkyModel();
 
         $this->data['prispevky'] = $this->prispevkyModel->vypisPrispevky();
+        
     }
 
-}
+} 

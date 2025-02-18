@@ -109,7 +109,7 @@ button.delete-button {
 button.save-button:hover,
 button.edit-button:hover,
 button.delete-button:hover {
-    background-color: #007bbf; /* Darker blue on hover */
+    background-color: #ff3b30; /* Darker blue on hover */
 }
 
 /* Navigation Styles */

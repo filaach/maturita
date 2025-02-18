@@ -1,4 +1,5 @@
 <?php
+require_once 'modely/RegistraceModel.php';
 class RegistraceKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
@@ -12,6 +13,9 @@ class RegistraceKontroler extends Kontroler
 
         ];
         $this->pohled = 'registrace';
+
+        $registraceModel = new RegistraceModel();
+        $registraceModel->registruj();
     }
 
 }

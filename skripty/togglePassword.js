@@ -1,6 +1,6 @@
-function togglePasswordVisibility() {
-  const passwordField = document.getElementById("password");
-  const eyeIcon = document.getElementById("eye-icon");
+function togglePasswordVisibility(repeat = false) {
+  const passwordField = document.getElementById("password" + (repeat ? "-repeat" : ""));
+  const eyeIcon = document.getElementById("eye-icon" + (repeat ? "-repeat" : ""));
 
   if (passwordField.type === "password") {
       passwordField.type = "text";

@@ -8,9 +8,18 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   /*background: linear-gradient(to right bottom, #000000, #292828);*/
   /*background: linear-gradient(to right bottom, #929092, #292828);*/
-  background-image: url("../obrazky/uvod.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-image: url("../obrazky/uvod.png");
+  background-repeat: repeat;
+  background-size: contain;*/
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .header {
