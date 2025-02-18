@@ -14,9 +14,9 @@ class VytvoritPrispevekKontroler extends Kontroler
 
         $this->pohled = 'vytvoritPrispevek';
 
-        $this->vytvoritPrispevekModel = new VytvoritPrispevekModel();
+        $vytvoritPrispevekModel = new VytvoritPrispevekModel();
 
-        $this->vytvoritPrispevekModel->vytvoritPrispevek();
+        $vytvoritPrispevekModel->vytvoritPrispevek();
 
         
     }

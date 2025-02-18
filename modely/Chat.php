@@ -1,6 +1,6 @@
 <?php
 
-class NastaveniModel
+class ChatModel
 {
     private PDO $db;
 

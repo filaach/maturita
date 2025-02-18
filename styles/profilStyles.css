@@ -1,0 +1,197 @@
+/* General Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa; /* Light background similar to Instagram */
+    color: #262626; /* Dark text for contrast */
+    line-height: 1.5;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px; /* Increased width for content */
+    margin: 20px auto; /* Center the content */
+    padding: 20px;
+    background-color: #ffffff; /* White background for sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    display: grid; /* Use grid for layout */
+    grid-template-columns: 1fr 3fr; /* Sidebar and main content */
+    gap: 20px; /* Gap between columns */
+}
+
+/* Sidebar Container */
+.sidebar {
+    background-color: #f9f9f9; /* Light background for sidebar */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside sidebar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below header */
+}
+
+.profile-picture {
+    width: 80px; /* Fixed size for the profile picture */
+    height: 80px; /* Fixed size for the profile picture */
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-info h1 {
+    font-size: 24px; /* Larger font for username */
+    color: #262626; /* Dark color for username */
+}
+
+.profile-info p {
+    color: #999; /* Lighter color for bio */
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between stats */
+    margin-bottom: 20px; /* Space below stats */
+    font-weight: bold; /* Bold text */
+}
+
+.profile-stats div {
+    text-align: center; /* Center text within each stat */
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px; /* Space between forms */
+}
+
+label {
+    display: block; /* Block for full width */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    margin-bottom: 10px; /* Space below input */
+}
+
+textarea {
+    width: 100%; /* Full width for the text area */
+    padding: 10px; /* Padding for comfort */
+    border: 1px solid #dbdbdb; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below text area */
+    resize: none; /* Prevent resizing */
+}
+
+/* Button Styles */
+button.save-button,
+button.edit-button,
+button.delete-button {
+    background-color: #0095f6; 
+    color: white; /* White text for contrast */
+    padding: 10px 15px;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    margin-right: 5px; /* Space between buttons */
+}
+
+button.save-button:hover,
+button.edit-button:hover,
+button.delete-button:hover {
+    background-color: #007bbf; /* Darker blue on hover */
+}
+
+/* Navigation Styles */
+.profile-nav {
+    margin: 20px 0; /* Space above and below navigation */
+}
+
+.profile-nav a {
+    text-decoration: none; /* Remove underline */
+    color: #0095f6; /* Instagram blue */
+    margin-right: 20px; /* Space between links */
+    font-weight: bold; /* Bold text */
+}
+
+.profile-nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Posts Container */
+.posts-container {
+    margin-top: 20px; /* Space above posts */
+}
+
+.post-item {
+    border: 1px solid #dbdbdb; /* Light border around posts */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px; /* Padding for comfort */
+    margin-bottom: 10px; /* Space between posts */
+    position: relative; /* Position for absolute button placement */
+}
+
+.post-item img {
+    max-width: 100%; /* Responsive images */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Edit and Delete Buttons in Post Item */
+.post-actions {
+    position: absolute; /* Absolute positioning */
+    top: 5px; /* Position from the top */
+    right: 10px; /* Position from the right */
+}
+
+.post-actions button {
+    background-color: #ff3b30;
+    color: white; /* White text for contrast */
+    padding: 5px 10px;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    margin-right: 5px; /* Space between buttons */
+}
+
+.post-actions button.edit-button {
+    background-color: #0095f6; /* Blue for edit */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+    
+    .sidebar {
+        display: none; /* Hide sidebar on mobile */
+    }
+
+    .profile-header {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .profile-picture {
+        margin-bottom: 10px; /* Space below image */
+    }
+
+    .profile-nav {
+        flex-direction: column; /* Stack navigation links */
+    }
+
+    .profile-nav a {
+        margin-bottom: 10px; /* Space below links */
+    }
+}

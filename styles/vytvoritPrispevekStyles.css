@@ -67,9 +67,11 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
+
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+    
 
 /* Zprávy */
 .zpravy {
@@ -115,3 +117,4 @@ input[type="file"] {
         padding: 10px;
     }
 }
+

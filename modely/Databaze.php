@@ -59,4 +59,7 @@ class Databaze
         $navrat->execute($parametry);
         return self::$spojeni->lastInsertId();
     }
+
+
+    
 }

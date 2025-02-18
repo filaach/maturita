@@ -1,4 +1,4 @@
-/* ---------- Reset ---------- */
+
 .container,
 .container * {
     box-sizing: border-box;
@@ -128,12 +128,158 @@
     transform: scale(1.1);
 }
 
-/* Upozornění */
-.btn-alert {
-    background-color: red;
-    margin-top: 10px;
+    
+/*nahrat prispevek*/ 
+button {
+    border: 15px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    cursor: pointer;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+  }
+  
+  button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* From Uiverse.io by felipesntr */ 
+button {
+    border: 15px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    cursor: pointer;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+  }
+  
+  button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  
+
+/* From Uiverse.io by vinodjangid07 */ 
+.button {
+    top: 10px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0px 15px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition-duration: .2s;
+  }
+  
+  .bell {
+    width: 13px;
+  }
+  
+  .bell path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .arrow {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    background-color: rgb(77, 77, 77);
+    transition-duration: .2s;
+  }
+  
+  .button:hover .arrow {
+    animation: slide-right .6s ease-out both;
+  }
+  /* arrow animation */
+  @keyframes slide-right {
+    0% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .button:active {
+    transform: translate(1px , 1px);
+    transition-duration: .2s;
+  }
+  
+
+
+  /* Styling pravého panelu */
+.right-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-alert:hover {
-    background-color: darkred;
+.right-panel:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Nadpis Filtry */
+.right-panel h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Box s filtry */
+.filters-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Styly pro jednotlivé odkazy */
+.filters-box a {
+  display: block;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #007bff, #24b4fb);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover efekt */
+.filters-box a:hover {
+  background: linear-gradient(135deg, #0056b3, #24b4fb);
+  transform: scale(1.05);
 }

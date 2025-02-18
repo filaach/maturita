@@ -30,9 +30,11 @@ class VytvoritPrispevekModel{
             }
     
             if (!empty($obsah) && !empty($typ)) {
-                Databaze::pripoj('localhost', 'root', '', 'maturita_new');
-                Databaze::vloz("INSERT INTO post (text, type, picture, room_id ,user_id) VALUES (:obsah, :typ, :soubor, :room_id, :user_id)", array(':obsah' => $obsah, ':typ' => $typ, ':soubor' => $soubor, ':room_id' => 1, ':user_id' => $_SESSION['user_id'] ?? 1));
+                Databaze::pripoj('localhost', 'root', '', 'maturita');
+                Databaze::vloz("INSERT INTO post (text, type, picture, room_id, user_id) VALUES (:obsah, :typ, :soubor, :room_id, :user_id)", array(':obsah' => $obsah, ':typ' => $typ, ':soubor' => $soubor, ':room_id' => 1, ':user_id' => $_SESSION['user_id'] ?? 1));
                 header('Location: vytvoritPrispevek?zprava=uspech');
+                
+            
             } else {
                 header('Location: vytvoritPrispevek?zprava=chyba');
             }
