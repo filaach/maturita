@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Příspěvky</title>
+    <link rel="stylesheet" href="styles/prispevkyStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Levý panel -->
+        <div class="left-panel panel">
+            <h2>Hledat uživatele</h2>
+
+            <!-- Vyhledávání -->
+            <form method="get" class="search-container">
+                <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input" value="<?= isset($_GET['hledat']) ? $_GET['hledat'] : '' ?>">
+                <button type="submit" class="btn search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <!-- Tlačítko pro nahrání příspěvku -->
+            <form method="get" action="vytvoritPrispevek">
+                <!-- From Uiverse.io by felipesntr --> 
+<button>
+  <span>
+    <svg
+      height="24"
+      width="24"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+    </svg>
+    Nahrát příspěvek
+  </span>
+</button>
+
+            </form>
+
+            <!-- Upozornění -->
+            <!-- From Uiverse.io by vinodjangid07 --> 
+<button class="button">
+   <svg class="bell" viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path></svg>
+  Notifications
+  <div class="arrow">›</div>
+</button>
+
+
+        </div>
+
+        <!-- Střední panel (Příspěvky) -->
+        <div class="middle-panel panel">
+            
+            <div class="prispevky-list">
+                <?php if (!empty($prispevky)): ?>
+                    <?php foreach ($prispevky as $prispevek): ?>
+                        <div class="prispevek">
+                            <p><?=htmlspecialchars($prispevek['userName'])?></p>
+                            
+                            <p class="prispevek-text">
+                                <?= htmlspecialchars($prispevek['text']) ?>
+                            </p>
+                            <span>
+                                <?= htmlspecialchars($prispevek['type']) ?> –
+
+                                
+                                <?= date('d.m.Y', strtotime($prispevek['dateOfCreation'])) ?>
+                            </span>
+                            <?php if (isset($prispevek['picture'])): ?>
+                                <img src="<?= htmlspecialchars($prispevek['picture']) ?>" width="400" alt="Prispevek">
+                            <?php endif; ?>
+
+                            <!--  ikony -->
+                            <div class="prispevek-akce">
+                                <a class="action-btn" href="prispevky?like=<?= $prispevek['id'] ?>"><i class="fa-regular fa-heart"></i></a> <!-- Like -->
+                                <a class="action-btn" href="prispevky?comment=<?= $prispevek['id'] ?>"><i class="fa-regular fa-comment"></i></a> <!-- Komentář -->
+                                <a class="action-btn" href="prispevky?save=<?= $prispevek['id'] ?>><i class="fa-regular fa-bookmark"></i></a> <!-- Uložení -->
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Žádné příspěvky nebyly nalezeny.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <!-- Pravý panel (Filtry) -->
+        <div class="right-panel panel">
+            <h2>Filtry</h2>
+            <div class="filters-box">
+                <a href="?filtr=strava">Strava</a><br>
+                <a href="?filtr=cviceni">Cvičení</a><br>
+                <a href="?">Všechny</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

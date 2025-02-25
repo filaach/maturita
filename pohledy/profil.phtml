@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="sidebar">
+        <h3>Novinky</h3>
+        <p>Zde se objeví nové inforace o účtu.</p>
+    </div>
+
+    <div class="main-content">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <img src="<?= htmlspecialchars($uzivatel['profilovka'] ?? 'obrazky/default-profile.png') ?>" 
+                 alt="Profilová fotka" class="profile-picture">
+            <div class="profile-info">
+                <h1><?= htmlspecialchars($uzivatel['userName'] ?? 'Uživatel') ?></h1>
+                <p><?= htmlspecialchars($uzivatel['bio'] ?? 'Zatím žádné informace.') ?></p>
+            </div>
+        </div>
+
+        <!-- Profile Stats -->
+        <div class="profile-stats">
+            <div>
+                <span>0</span>
+                Sledujících
+            </div>
+            <div>
+                <span>0</span>
+                Sleduje
+            </div>
+        </div>
+
+        <!-- Profile Picture Change Form -->
+        <form class="profile-upload" method="post" enctype="multipart/form-data">
+            <label for="profilovka">Změnit profilovou fotku</label>
+            <input type="file" id="profilovka" name="profilovka">
+            <button class="save-button" type="submit">Změnit</button>
+        </form>
+
+        <!-- Bio Edit Form -->
+        <form class="profile-bio" method="post">
+            <label for="bio">Editujte svůj popis:</label>
+            <textarea id="bio" name="bio" placeholder="Napište něco o sobě..."><?= htmlspecialchars($uzivatel['bio'] ?? '') ?></textarea>
+            <button class="save-button" type="submit">Uložit</button>
+        </form>
+
+        <!-- Profile Navigation -->
+        <div class="profile-nav">
+            <a href="#">Příspěvky</a>
+            <a href="#">Uložené</a>
+        </div>
+
+        <!-- User Posts -->
+        <div class="posts-container">
+            <?php if (!empty($prispevky)): ?>
+                <?php foreach ($prispevky as $prispevek): ?>
+                    <div class="post-item">
+                        <div><p><?= htmlspecialchars($prispevek['text']) ?></p></div>
+                        
+                        <div><?php if (!empty($prispevek['picture'])): ?>
+                            <img src="<?= htmlspecialchars($prispevek['picture']) ?>" width="250"   alt="Příspěvek">
+                        <?php endif; ?></div>
+                        
+                        <div class="post-actions">
+                            <button class="edit-button" onclick="editPost(<?= $prispevek['id'] ?>)">Edit</button>
+                            <button class="delete-button" onclick="deletePost(<?= $prispevek['id'] ?>)">Delete</button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Žádné příspěvky nenalezeny.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    function editPost(postId) {
+        // Function to handle editing a post
+        alert('Edit post with ID: ' + postId);
+        // Implement your edit logic here
+    }
+
+    function deletePost(postId) {
+        // Function to handle deleting a post
+        if (confirm('Are you sure you want to delete this post?')) {
+            alert('Delete post with ID: ' + postId);
+            // Implement your delete logic here
+        }
+    }
+</script>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastavení</title>
+    <link rel="stylesheet" href="styles/nastaveniStyles.css">
+</head>
+<body>
+
+<!-- Navigace v účtu -->
+<div class="ucet-nastaveni"> 
+    <h1>Účet</h1> 
+<a href="profil" class="profile-link">Zobrazit účet</a> 
+<!-- Other account settings and forms go here --> </div>
+
+<div class="container">
+    <h1>Nastavení</h1>
+
+    <!-- Sekce: Změna hesla -->
+    <section>
+        <h2>Změna hesla</h2>
+        <form method="post" action="zmenitHeslo.php">
+            <div>
+                <label for="nove-heslo">Nové heslo:</label>
+                <input type="password" id="nove-heslo" name="nove-heslo" required>
+            </div>
+            <div>
+                <label for="potvrzeni-hesla">Potvrzení hesla:</label>
+                <input type="password" id="potvrzeni-hesla" name="potvrzeni-hesla" required>
+            </div>
+            <button type="submit">Změnit heslo</button>
+        </form>
+    </section>
+
+    <!-- Sekce: Změna e-mailu -->
+    <section>
+        <h2>Změna e-mailu</h2>
+        <form method="post" action="zmenitEmail.php">
+            <div>
+                <label for="novy-email">Nový e-mail:</label>
+                <input type="email" id="novy-email" name="novy-email" required>
+            </div>
+            <button type="submit">Změnit e-mail</button>
+        </form>
+    </section>
+
+    <!-- Sekce: Soukromí -->
+    <section>
+        <h2>Soukromí</h2>
+        <form method="post" action="nastaveniSoukromi.php">
+            <div>
+                <label>
+                    <input type="checkbox" name="verejny-ucet" checked>
+                    Veřejný účet
+                </label>
+            </div>
+            <button type="submit">Uložit nastavení</button>
+        </form>
+    </section>
+
+    <!-- Sekce: Lajkované příspěvky -->
+    <section>
+        <h2>Lajkované příspěvky</h2>
+        <a href="ucet/lajkovanePrispevky">Zobrazit všechny lajkované příspěvky</a>
+    </section>
+
+    <!-- Sekce: Blokování uživatelů -->
+    <section>
+        <h2>Blokovaní uživatelé</h2>
+        <form method="post" action="blokovatUzivatele.php">
+            <div>
+                <label for="uzivatel">Zadejte jméno nebo ID uživatele:</label>
+                <input type="text" id="uzivatel" name="uzivatel" required>
+            </div>
+            <button type="submit">Blokovat uživatele</button>
+        </form>
+
+        <h3>Seznam blokovaných uživatelů</h3>
+        <ul>
+            <?php if (!empty($blokovani)): ?>
+                <?php foreach ($blokovani as $uzivatel): ?>
+                    <li>
+                        <?= htmlspecialchars($uzivatel['userName']) ?>
+                        <form method="post" action="odblokovatUzivatele.php" style="display:inline;">
+                            <input type="hidden" name="uzivatel_id" value="<?= $uzivatel['id'] ?>">
+                            <button type="submit" class="unblock">Odblokovat</button>
+                        </form>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Nemáte žádné blokované uživatele.</p>
+            <?php endif; ?>
+        </ul>
+    </section>
+
+    <!-- Sekce: Odhlášení a smazání účtu -->
+    <section>
+        <h2>Účet</h2>
+        <form method="get" action="odhlasit">
+            <button type="submit" class="logout">Odhlásit se</button>
+        </form>
+        <form method="get" action="smazatUcet" onsubmit="return confirm('Opravdu chcete smazat svůj účet?')">
+            <button type="submit" class="danger">Smazat účet</button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,28 +1,164 @@
-.ucet-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
+/* General Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.ucet-container a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    background-color: white;
-    border-radius: 12px;
-    padding: 7px;
-    box-shadow: rgba(0, 0, 0, 0.8) 3px 3px 8px;
-    transition: background-color 0.3s ease;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa; /* Light background similar to Instagram */
+  color: #262626; /* Dark text for contrast */
+  line-height: 1.5;
 }
 
-.ucet-container a:hover{
-    background-color: #d881e6;
+/* Main Container */
+.container {
+  max-width: 600px; /* Fixed width for content */
+  margin: 20px auto; /* Center the content */
+  padding: 20px;
+  background-color: #ffffff; /* White background for sections */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
-.ucet-nastaveni .h1{
-    
+/* Account Settings Section */
+.ucet-nastaveni {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center vertically */
+  margin-bottom: 20px; /* Space below the account section */
+}
+
+.ucet-nastaveni h1 {
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Profile Link Styling */
+.profile-link {
+  display: inline-block; /* Inline block to allow padding */
+  padding: 10px 15px; /* Padding for the link */
+  background-color: #0095f6; /* Instagram blue */
+  color: white; /* White text for contrast */
+  border-radius: 4px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.profile-link:hover {
+  background-color: #007bbf; /* Darker blue on hover */
+}
+
+/* Headings */
+h1, h2 {
+  margin-bottom: 15px;
+  color: #262626;
+}
+
+h1 {
+  font-size: 24px;
+  border-bottom: 2px solid #dbdbdb; /* Underline for the main title */
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px; /* Space above section headings */
+}
+
+/* Form Styles */
+form {
+  margin-bottom: 20px; /* Space between forms */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Padding for comfort */
+  border: 1px solid #dbdbdb; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below inputs */
+}
+
+button {
+  background-color: #0095f6; /* Instagram blue */
+  color: white; /* White text for contrast */
+  padding: 10px 15px;
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #007bbf; /* Darker blue on hover */
+}
+
+/* Sections for other elements */
+section {
+  margin-bottom: 30px; /* Space below sections */
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points from list */
+  padding-left: 0; /* Remove padding */
+}
+
+li {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+  padding: 10px 0; /* Space above and below list items */
+  border-bottom: 1px solid #dbdbdb; /* Light border for separation */
+}
+
+li:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+/* Additional button styles */
+.unblock, .logout, .danger {
+  background-color: #ff3b30; /* Red for danger actions */
+  margin-left: 10px; /* Space between buttons */
+}
+
+.unblock:hover {
+  background-color: #ff2d25; /* Darker red on hover */
+}
+
+.logout:hover, .danger:hover {
+  background-color: #e63946; /* Darker red on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+      margin: 10px; /* Less margin on smaller screens */
+      padding: 15px; /* Less padding */
+  }
+
+  h1 {
+      font-size: 22px; /* Smaller heading on mobile */
+  }
+
+  h2 {
+      font-size: 18px; /* Smaller section headings */
+  }
+
+  button {
+      width: 100%; /* Full width buttons on mobile */
+  }
+
+  .profile-link {
+      width: 100%; /* Full width profile link on mobile */
+  }
 }
