@@ -96,3 +96,51 @@
 .details{
     width: 100%;
 }
+
+/* Styl pro všechna nová pole */
+.details {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.details:focus {
+    border-color: #06ee1a;
+    box-shadow: 0 0 8px rgba(13, 248, 52, 0.5);
+    outline: none;
+}
+
+/* Lepší zarovnání ikon pro hesla */
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Umožňuje prostor pro ikonu */
+}
+
+.password-container #toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Styl pro tlačítko */
+.login-form button {
+    background-color: #b6ec96;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-form button:hover {
+    background-color: #89c76e;
+}

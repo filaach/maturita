@@ -117,7 +117,7 @@ button.delete-button:hover {
     margin: 20px 0; /* Space above and below navigation */
 }
 
-.profile-nav a {
+.profile-nav a, .profile-nav p {
     text-decoration: none; /* Remove underline */
     color: #0095f6; /* Instagram blue */
     margin-right: 20px; /* Space between links */
@@ -191,7 +191,7 @@ button.delete-button:hover {
         flex-direction: column; /* Stack navigation links */
     }
 
-    .profile-nav a {
+    .profile-nav a, .profile-nav p {
         margin-bottom: 10px; /* Space below links */
     }
 }

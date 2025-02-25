@@ -17,6 +17,11 @@ class RegistraceModel
                 exit;
             }
             Databaze::pripoj('localhost', 'root', '', 'maturita');
+            $duplicate = Databaze::dotazJeden("SELECT * FROM user WHERE userName = ? OR email = ? OR phone = ?", [$login, $email, $telefon]);
+            if ($duplicate) {
+                header('Location: registrace?zprava=existuje');
+                exit;
+            }
             $user = Databaze::vloz("INSERT INTO user (userName, password, email, phone, dateOfBirth) VALUES (?, ?, ?, ?, ?)", [$login, password_hash($heslo, PASSWORD_DEFAULT), $email, $telefon, $datumNarozeni]);
             if (!$user) {
                 header('Location: login?zprava=chyba');

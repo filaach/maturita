@@ -1,14 +1,22 @@
 <div class="chat-container">
     <h1>Chatovací místnost</h1>
 
+    <form method="get" class="search-container">
+        <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input"
+            value="<?= isset($_GET['hledat']) ? $_GET['hledat'] : '' ?>">
+        <button type="submit" class="btn search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+
     <?php if (!empty($uzivatele)): ?>
         <div class="users-list">
             <h2>Uživatelé</h2>
             <ul>
-                <?php foreach ($uzivatele as $uzivatel): ?>
+                <?php foreach ($uzivatele as $uz): ?>
                     <li>
-                        <a href="?prijemce_id=<?= htmlspecialchars($uzivatel['id']) ?>">
-                            <?= htmlspecialchars($uzivatel['userName']) ?>
+                        <a href="chat/<?= htmlspecialchars($uz['id']) ?>">
+                            <?= htmlspecialchars($uz['userName']) ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -16,15 +24,17 @@
         </div>
     <?php endif; ?>
 
-    <?php if (!empty($zpravy)): ?>
+    <?php if (!empty($uzivatel)): ?>
         <div class="chat-messages">
             <h2>Chat</h2>
-            <?php foreach ($zpravy as $zprava): ?>
-                <div class="message">
-                    <strong><?= htmlspecialchars($zprava['odesilatel_id'] == 1 ? 'Já' : 'Oni') ?>:</strong>
-                    <?= htmlspecialchars($zprava['zprava']) ?>
-                </div>
-            <?php endforeach; ?>
+            <?php if (!empty($zpravy)): ?>
+                <?php foreach ($zpravy as $zprava): ?>
+                    <div class="message">
+                        <strong><?= htmlspecialchars($zprava['user_id'] == $_SESSION['user_id'] ? 'Já' : 'On') ?>:</strong>
+                        <?= htmlspecialchars($zprava['text']) ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
 
         <form method="post">

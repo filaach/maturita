@@ -1,125 +1,188 @@
+/* ---------------------------------------------------------
+   1) RESET A ZÁKLAD
+--------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  /* Tmavé pozadí s přechodem */
+  background: radial-gradient(circle at 10% 10%, #2b2b2b, #1c1c1c 80%) no-repeat,
+              linear-gradient(135deg, #1c1c1c, #3a3a3a);
+  min-height: 100vh;
 }
 
-.imgtl{
-    position: absolute;
-    top: 0rem;
-    left: 2rem;
-    z-index: 999;
-    transform: scale(0.8);
-    border-radius: 20px;
-}
-
-.imgbl{
-    position: absolute;
-    top: 32rem;
-    left: 2rem;
-    z-index: 10;
-    transform: scale(0.8);
-
-}
-
-.imgr{
-    position: absolute;
-    top: 25rem;
-    right: 12rem;
-    z-index: 10;
-    transform: scale(0.8);
-    bottom: 20px;
-}
-
+/* ---------------------------------------------------------
+   2) HLAVNÍ KONTEJNER (CENTROVÁNÍ NA STRÁNCE)
+--------------------------------------------------------- */
 .intro-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  width: 90%;
+  max-width: 1400px; /* klidně upravte */
+  margin: 0 auto;    /* vycentrování kontejneru */
+  padding: 20px;
+  text-align: center; 
 }
 
+/* ---------------------------------------------------------
+   3) HLAVIČKA
+--------------------------------------------------------- */
 .intro-header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #343333;
-    font-style: italic;
+  margin-bottom: 30px;
+  color: #343333;
+  font-style: italic;
 }
 
-.content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-
+.intro-header p {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-.left,
-.right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* ---------------------------------------------------------
+   4) HLAVNÍ OBSAH – GRID (2 sloupce)
+     1. phone-area (vlevo)
+     2. text-area  (uprostřed)
+--------------------------------------------------------- */
+.main-content {
+  display: grid;
+  grid-template-columns: minmax(200px, 400px) 1fr;
+  gap: 50px; /* Vzdálenost mezi telefonem a textem */
+  align-items: start;
 }
 
-.left img,
-.right img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 10px;
-    right: 20px;
+/* LEVÁ ČÁST: TELEFON */
+.phone-area {
+  display: flex;
+  justify-content: flex-start; /* Telefon úplně vlevo */
 }
 
-.center {
-    line-height: 1.6;
-    background-color: #343333;
-    padding: 1rem 2rem;
-    border-radius: 25px;
+/* STŘEDNÍ ČÁST: TEXT + TLAČÍTKA */
+.text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Text box + tlačítka uprostřed sloupce */
+  gap: 20px;
 }
 
-.center p {
-    margin-bottom: 15px;
+/* ---------------------------------------------------------
+   5) TELEFON A AUTOMATICKÝ POSUN OBRÁZKŮ
+--------------------------------------------------------- */
+.phone-frame {
+  position: relative;
+  width: 300px; /* Šířka telefonu */
+  max-width: 100%;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: #343333;
-    border-radius: 15px;
-    position: relative;
-    top: 425px;
-    padding: 10px;
-    right: 500px;
+.phone-image {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+/* "Displej" uvnitř telefonu */
+.scroll-wrapper {
+  position: absolute;
+  top: 15%;    /* upravte podle skutečného tvaru telefonu */
+  left: 13%;
+  width: 74%;
+  height: 63%;
+  overflow: hidden; /* schováme přesah */
+}
+
+.scroll-track {
+  position: relative;
+  animation: autoScroll 20s linear infinite;
+}
+
+.scroll-track img {
+  width: 100%;
+  display: block;
+}
+
+/* ANIMACE – posun obrázků shora dolů a zpět */
+@keyframes autoScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* ---------------------------------------------------------
+   6) TEXTOVÝ BOX
+--------------------------------------------------------- */
+.text-box {
+  background-color: #343333;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  text-align: left;
+  max-width: 600px; 
+}
+
+.text-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   7) TLAČÍTKA POD TEXTEM
+--------------------------------------------------------- */
+.button-row {
+  display: flex;
+  gap: 20px;
 }
 
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #343333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #343333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #448844;
+  background-color: #448844;
 }
 
+/* ---------------------------------------------------------
+   8) TLAČÍTKO DOLE
+--------------------------------------------------------- */
 .continue-button {
-    margin-top: 120px;
-    padding: 10px 20px;
-    background-color: #333333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background-color: #333333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .continue-button:hover {
-    background-color: #448844;
+  background-color: #448844;
+}
+
+/* ---------------------------------------------------------
+   9) RESPONSIVITA
+--------------------------------------------------------- */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Vše pod sebe */
+    justify-content: center;
+  }
+  
+  .phone-area {
+    justify-content: center; /* Telefon se vycentruje */
+  }
+
+  .text-box {
+    text-align: center;
+  }
 }

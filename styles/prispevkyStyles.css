@@ -121,6 +121,11 @@
     cursor: pointer;
     font-size: 1.3rem;
     transition: color 0.2s ease, transform 0.2s ease;
+    color: blue;
+}
+
+.action-btn:visited{
+  color: blue;
 }
 
 .action-btn:hover {
@@ -282,4 +287,9 @@ button {
 .filters-box a:hover {
   background: linear-gradient(135deg, #0056b3, #24b4fb);
   transform: scale(1.05);
+}
+
+.liked {
+  color: red;
+
 }

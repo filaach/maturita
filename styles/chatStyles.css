@@ -5,6 +5,42 @@ body {
     padding: 0;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.search-input:focus {
+    border-color: #0095f6;
+}
+
+.search-btn {
+    background-color: #007bbd;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #005fa3;
+}
+
+
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -77,3 +113,4 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+

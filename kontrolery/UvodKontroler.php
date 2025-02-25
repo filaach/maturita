@@ -14,6 +14,10 @@ class UvodKontroler extends Kontroler
 
         $this->pohled = 'uvod';
 
+        $uvodModel = new UvodModel();
+        $uvod = $uvodModel->vratUvod();
+        $this->data['uvod'] = $uvod;
+
 
 
     }
