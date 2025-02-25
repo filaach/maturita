@@ -1,0 +1,60 @@
+.chyba-container {
+    background: linear-gradient(90deg, #FF3333, #FF4D4D);
+    font-style: fantasy;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    border: 2px solid #FF0000;
+  }
+  
+  .chyba-container:before {
+    content: '❚█══█❚'; 
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  
+  .chyba-container a {
+
+    color: rgb(17, 158, 219);
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .chyba-container a:hover {
+    color: #02fbff; 
+  }
+
+  /* Hladký nástup textu */
+#error-title, #error-message, #back-home {
+    opacity: 0;
+}
+
+/* Pulzování odkazu */
+.pulse {
+    animation: pulse-animation 1.5s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+  

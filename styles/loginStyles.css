@@ -35,15 +35,15 @@
 }
 
 .login-form input:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+    border-color: #06ee1a;
+    box-shadow: 0 0 5px rgba(13, 248, 52, 0.5);
     outline: none;
 }
 
 .login-form button {
     padding: 12px;
     border-radius: 8px;
-    background-color: #3a033b;
+    background-color: #c0ed90;
     color: #ffffff;
     font-size: 1.1rem;
     border: none;
@@ -53,7 +53,7 @@
 }
 
 .login-form button:hover {
-    background-color: #8c1e9d;
+    background-color: #797979;
 }
 
 .username-container {

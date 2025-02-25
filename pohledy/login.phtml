@@ -2,13 +2,13 @@
     <form method="POST" class="login-form">
         <h2>Přihlášení</h2>
         <label for="username">Uživatelské jméno:</label>
-        <div class ="username-container">
-        <input type="text" id="username" name="username" required>
+        <div class="username-container">
+            <input type="text" id="username" name="username" required>
         </div>
 
         <label for="password">Heslo:</label>
         <div class="password-container">
-            <input type="password" id="password" name="password" required/>
+            <input type="password" id="password" name="password" required />
             <span id="toggle-password" onclick="togglePasswordVisibility();">
                 <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -21,6 +21,12 @@
 
 
         <button type="submit">Přihlásit se</button>
+        <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'login'): ?>
+            <span class="chyba">Špatné uživatelské jméno</span>
+        <?php endif; ?>
+        <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'heslo'): ?>
+            <span class="chyba">Špatné heslo</span>
+        <?php endif; ?>
         <p>Nemáte účet? <a href="/registrace">Registrujte se</a></p>
     </form>
 </div>
