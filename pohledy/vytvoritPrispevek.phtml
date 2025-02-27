@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vytvořit nový příspěvek</title>
     <link rel="stylesheet" href="styles/vytvoritPrispevekStyles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Vytvořit nový příspěvek</h1>
 
-        <!-- Zobrazení zpráv -->
         <?php if (isset($zpravy) && is_array($zpravy) && !empty($zpravy)): ?>
             <div class="zpravy">
                 <?php foreach ($zpravy as $zprava): ?>
@@ -21,7 +22,6 @@
             </div>
         <?php endif; ?>
 
-        <!-- Formulář -->
         <form method="post" enctype="multipart/form-data">
             <div class="formular-polozka">
                 <label for="obsah">Obsah příspěvku:</label>
@@ -41,13 +41,14 @@
                 <input type="file" id="soubor" name="soubor" accept="image/*">
             </div>
             <button type="submit">Přidat příspěvek</button>
-            <?php if ( isset($_GET['zprava']) && $_GET['zprava'] === 'uspech'): ?>
+            <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'uspech'): ?>
                 <span>Úspěšně odesláno</span>
             <?php endif; ?>
-            <?php if ( isset($_GET['zprava']) && $_GET['zprava'] === 'chyba'): ?>
+            <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'chyba'): ?>
                 <span class="chyba">Chyba</span>
             <?php endif; ?>
         </form>
     </div>
 </body>
+
 </html>

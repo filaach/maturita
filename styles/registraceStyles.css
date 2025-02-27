@@ -5,6 +5,7 @@
     justify-content: center;
     padding-top: 4rem;
 }
+
 .login-form {
     background-color: white;
     padding: 40px;
@@ -29,7 +30,7 @@
     border: 1px solid #ddd;
 }
 
-.login-form label{
+.login-form label {
     margin-bottom: 0.5rem;
     align-self: flex-start;
 }
@@ -49,7 +50,7 @@
     border: none;
     width: 100%;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease ;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .login-form button:hover {
@@ -93,6 +94,51 @@
     margin-bottom: 0;
 }
 
-.details{
+.details {
     width: 100%;
+}
+
+.details {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.details:focus {
+    border-color: #06ee1a;
+    box-shadow: 0 0 8px rgba(13, 248, 52, 0.5);
+    outline: none;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-container #toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.login-form button {
+    background-color: #b6ec96;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-form button:hover {
+    background-color: #89c76e;
 }

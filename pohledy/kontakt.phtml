@@ -5,14 +5,18 @@
 <form method="post" id="form-email">
     <label>
         Vaše emailová adresa<br />
-        <input type="email" name="email" required="required" value="<?php if (isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>" />
+        <input type="email" name="email" required="required"
+            value="<?php if (isset($_POST['email']))
+                echo (htmlspecialchars($_POST['email'])); ?>" />
     </label><br />
     <label>
         Antispam - zadejte aktuální rok<br />
         <input type="text" name="rok" required="required" />
     </label><br />
     <label>
-        <textarea name="zprava"><?php if (isset($_POST['zprava'])) echo(htmlspecialchars($_POST['zprava'])); ?></textarea>
+        <textarea
+            name="zprava"><?php if (isset($_POST['zprava']))
+                echo (htmlspecialchars($_POST['zprava'])); ?></textarea>
     </label><br />
     <input type="submit" value="Odeslat" />
 </form>

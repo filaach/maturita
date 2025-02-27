@@ -1,60 +1,61 @@
 .chyba-container {
-    background: linear-gradient(90deg, #FF3333, #FF4D4D);
-    font-style: fantasy;
-    color: white;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-    border: 2px solid #FF0000;
-  }
-  
-  .chyba-container:before {
-    content: '❚█══█❚'; 
-    position: absolute;
-    left: 10px;
-    top: 10px;
-  }
-  
-  .chyba-container a {
+  min-height: 82.8vh;
+  width: 100%;
 
-    color: rgb(17, 158, 219);
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-  }
-  
-  .chyba-container a:hover {
-    color: #02fbff; 
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  /* Hladký nástup textu */
-#error-title, #error-message, #back-home {
-    opacity: 0;
+
+  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* Pulzování odkazu */
-.pulse {
-    animation: pulse-animation 1.5s infinite;
-}
-
-@keyframes pulse-animation {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.chyba-container h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ff4757;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 
-  
+.chyba-container p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+
+.chyba-container a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  background: #ff4757;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.chyba-container a:hover {
+  background: #e84118;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .chyba-container h1 {
+    font-size: 3rem;
+  }
+
+  .chyba-container p {
+    font-size: 1.1rem;
+  }
+}

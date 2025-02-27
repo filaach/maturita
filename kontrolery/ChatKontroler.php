@@ -4,34 +4,35 @@ class ChatKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
-        // Nastavení hlavičky stránky
         $this->hlavicka = [
             'titulek' => 'Chatovací místnost',
             'popis' => 'Seznam uživatelů a chat mezi nimi.',
             'klicova_slova' => 'chat, zprávy, uživatelé',
-            'stylesheet' => 'styles/chatStyles.css',
+            'stylesheet' => 'chatStyles.css',
             'skripty' => []
         ];
 
-        $chatModel = new ChatModel();
-
-        // Načtení seznamu uživatelů
-        if (!isset($parametry['prijemce_id'])) {
-            $this->data['uzivatele'] = $chatModel->nactiUzivatele();
-        } else {
-            // Načtení zpráv pro konkrétního uživatele
-            $odesilatelId = $_SESSION['uzivatel_id'] ?? 1; // Nastavte ID aktuálního uživatele (např. 1)
-            $prijemceId = (int)$parametry['prijemce_id'];
-
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['zprava'])) {
-                $chatModel->ulozitZpravu($odesilatelId, $prijemceId, $_POST['zprava']);
-            }
-
-            $this->data['zpravy'] = $chatModel->nactiZpravy($odesilatelId, $prijemceId);
-            $this->data['prijemce'] = $chatModel->nactiUzivatelePodleId($prijemceId);
+        if (!isset($_SESSION['user_id'])) {
+            $this->presmeruj('login');
+            exit;
         }
 
-        // Pohled
+        $chatModel = new ChatModel();
+
+        if (isset($parametry[0]) && is_numeric($parametry[0]))
+            $this->data['uzivatel'] = $parametry[0];
+
+        $this->data['uzivatele'] = $chatModel->vypisUzivatele();
+
+        if (isset($_POST['zprava'])) {
+            $chatModel->ulozZpravu($_SESSION['user_id'], $parametry[0], $_POST['zprava']);
+        }
+
+        if (isset($parametry[0]) && is_numeric($parametry[0])) {
+            $this->data['zpravy'] = $chatModel->vypisZpravy($_SESSION['user_id'], $parametry[0]);
+        }
+
+
         $this->pohled = 'chat';
     }
 }

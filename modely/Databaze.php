@@ -1,8 +1,8 @@
 <?php
 class Databaze
 {
-    private static ?PDO $spojeni = null; // Povolit možnost null pro lepší kontrolu
-    
+    private static ?PDO $spojeni = null;
+
     private static array $nastaveni = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
@@ -53,7 +53,7 @@ class Databaze
         return $navrat->rowCount();
     }
 
-    public static function vloz(string $dotaz, array $parametry = array()): string | false
+    public static function vloz(string $dotaz, array $parametry = array()): string|false
     {
         $navrat = self::$spojeni->prepare($dotaz);
         $navrat->execute($parametry);
@@ -61,5 +61,5 @@ class Databaze
     }
 
 
-    
+
 }

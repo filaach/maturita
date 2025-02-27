@@ -1,241 +1,231 @@
-
 .container,
 .container * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Hlavní kontejner */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
-/* Levý a pravý panel */
 .left-panel,
 .right-panel {
-    position: sticky;
-    top: 20px;
-    height: fit-content;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
 }
 
-/* Panely */
 .panel {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Vyhledávání */
 .search-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
 }
 
 .search-input {
-    flex: 1;
-    padding: 8px 12px;
-    font-size: 0.95rem;
-    border: 1px solid #dbdbdb;
-    border-radius: 6px;
-    outline: none;
-    transition: border 0.2s ease;
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
 }
 
 .search-input:focus {
-    border-color: #0095f6;
+  border-color: #0095f6;
 }
 
 .search-btn {
-    background-color: #007bbd;
-    color: white;
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s ease;
+  background-color: #007bbd;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .search-btn:hover {
-    background-color: #005fa3;
+  background-color: #005fa3;
 }
 
 /* Příspěvky */
 .prispevky-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .prispevek {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .prispevek:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
-    transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
 }
 
 .prispevek-autor {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .prispevek-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-/* Ikony pro interakce */
 .prispevek-akce {
-    display: flex;
-    gap: 15px;
-    font-size: 1.2rem;
-    color: #333;
-    margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
 }
 
 .action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.3rem;
-    transition: color 0.2s ease, transform 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  color: blue;
+}
+
+.action-btn:visited {
+  color: blue;
 }
 
 .action-btn:hover {
-    color: #ff3b30;
-    transform: scale(1.1);
+  color: #ff3b30;
+  transform: scale(1.1);
 }
 
-    
-/*nahrat prispevek*/ 
 button {
-    border: 15px solid #24b4fb;
-    background-color: #24b4fb;
-    border-radius: 0.9em;
-    cursor: pointer;
-    padding: 0.8em 1.2em 0.8em 1em;
-    transition: all ease-in-out 0.2s;
-    font-size: 16px;
-  }
-  
-  button span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  /* From Uiverse.io by felipesntr */ 
-button {
-    border: 15px solid #24b4fb;
-    background-color: #24b4fb;
-    border-radius: 0.9em;
-    cursor: pointer;
-    padding: 0.8em 1.2em 0.8em 1em;
-    transition: all ease-in-out 0.2s;
-    font-size: 16px;
-  }
-  
-  button span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  
+  border: 15px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  cursor: pointer;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
 
-/* From Uiverse.io by vinodjangid07 */ 
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+button {
+  border: 15px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  cursor: pointer;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
 .button {
-    top: 10px;
-    width: 200px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    padding: 0px 15px;
-    background-color: rgb(66, 66, 66);
-    border-radius: 10px;
-    color: white;
-    border: none;
-    position: relative;
-    cursor: pointer;
-    transition-duration: .2s;
-  }
-  
-  .bell {
-    width: 13px;
-  }
-  
-  .bell path {
-    fill: rgb(255, 255, 255);
-  }
-  
-  .arrow {
-    position: absolute;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .button:hover {
-    background-color: rgb(77, 77, 77);
-    transition-duration: .2s;
-  }
-  
-  .button:hover .arrow {
-    animation: slide-right .6s ease-out both;
-  }
-  /* arrow animation */
-  @keyframes slide-right {
-    0% {
-      transform: translateX(-10px);
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  .button:active {
-    transform: translate(1px , 1px);
-    transition-duration: .2s;
-  }
-  
+  top: 10px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0px 15px;
+  background-color: rgb(66, 66, 66);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: .2s;
+}
 
+.bell {
+  width: 13px;
+}
 
-  /* Styling pravého panelu */
+.bell path {
+  fill: rgb(255, 255, 255);
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: rgb(77, 77, 77);
+  transition-duration: .2s;
+}
+
+.button:hover .arrow {
+  animation: slide-right .6s ease-out both;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.button:active {
+  transform: translate(1px, 1px);
+  transition-duration: .2s;
+}
+
 .right-panel {
   background: #ffffff;
   border-radius: 12px;
@@ -249,7 +239,6 @@ button {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Nadpis Filtry */
 .right-panel h2 {
   font-size: 22px;
   font-weight: bold;
@@ -258,14 +247,12 @@ button {
   text-transform: uppercase;
 }
 
-/* Box s filtry */
 .filters-box {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
-/* Styly pro jednotlivé odkazy */
 .filters-box a {
   display: block;
   padding: 10px 15px;
@@ -278,8 +265,12 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-/* Hover efekt */
 .filters-box a:hover {
   background: linear-gradient(135deg, #0056b3, #24b4fb);
   transform: scale(1.05);
+}
+
+.liked {
+  color: red;
+
 }

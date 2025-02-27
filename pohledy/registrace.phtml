@@ -45,6 +45,9 @@
         <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'heslo'): ?>
             <span class="chyba">Hesla se neschodují</span>
         <?php endif; ?>
+        <?php if (isset($_GET['zprava']) && $_GET['zprava'] === 'existuje'): ?>
+            <span class="chyba">Tento uživatel nebo email nebo telefon jiz existuje</span>
+        <?php endif; ?>
         <p>Máte účet? <a href="/login">Přihlašte se</a></p>
     </form>
 </div>
