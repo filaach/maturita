@@ -9,6 +9,6 @@ class OdhlasitKontroler extends Kontroler
 
     }
 
-    
+
 
 }

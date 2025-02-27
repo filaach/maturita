@@ -5,6 +5,7 @@
     justify-content: center;
     padding-top: 4rem;
 }
+
 .login-form {
     background-color: white;
     padding: 40px;
@@ -29,7 +30,7 @@
     border: 1px solid #ddd;
 }
 
-.login-form label{
+.login-form label {
     margin-bottom: 0.5rem;
     align-self: flex-start;
 }
@@ -49,7 +50,7 @@
     border: none;
     width: 100%;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease ;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .login-form button:hover {
@@ -93,11 +94,10 @@
     margin-bottom: 0;
 }
 
-.details{
+.details {
     width: 100%;
 }
 
-/* Styl pro všechna nová pole */
 .details {
     width: 100%;
     padding: 12px;
@@ -116,14 +116,13 @@
     outline: none;
 }
 
-/* Lepší zarovnání ikon pro hesla */
 .password-container {
     position: relative;
 }
 
 .password-container input {
     width: 100%;
-    padding-right: 40px; /* Umožňuje prostor pro ikonu */
+    padding-right: 40px;
 }
 
 .password-container #toggle-password {
@@ -134,7 +133,6 @@
     cursor: pointer;
 }
 
-/* Styl pro tlačítko */
 .login-form button {
     background-color: #b6ec96;
     font-weight: bold;

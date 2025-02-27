@@ -4,7 +4,6 @@ class ChatKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
-        // Nastavení hlavičky stránky
         $this->hlavicka = [
             'titulek' => 'Chatovací místnost',
             'popis' => 'Seznam uživatelů a chat mezi nimi.',

@@ -29,4 +29,4 @@ class PrispevkyKontroler extends Kontroler
 
     }
 
-} 
+}

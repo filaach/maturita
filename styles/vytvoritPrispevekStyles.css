@@ -1,4 +1,3 @@
-/* Základní styl pro celou stránku */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -6,7 +5,6 @@ body {
     padding: 0;
 }
 
-/* Kontejner pro obsah */
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -16,7 +14,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Nadpis */
 h1 {
     font-size: 24px;
     text-align: center;
@@ -24,14 +21,12 @@ h1 {
     color: #333;
 }
 
-/* Formulář */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Pole formuláře */
 label {
     font-weight: bold;
     margin-bottom: 5px;
@@ -49,13 +44,11 @@ input[type="file"] {
     color: #333;
 }
 
-/* Textarea */
 textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-/* Tlačítko */
 button[type="submit"] {
     background-color: #007bff;
     color: white;
@@ -71,9 +64,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
-    
 
-/* Zprávy */
 .zpravy {
     margin-bottom: 20px;
     padding: 15px;
@@ -95,19 +86,16 @@ button[type="submit"]:hover {
     background-color: #2ecc71;
 }
 
-/* Odsazení prvků formuláře */
 .formular-polozka {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-/* Nahrávání souboru */
 input[type="file"] {
     border: none;
 }
 
-/* Responsivní design */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -117,4 +105,3 @@ input[type="file"] {
         padding: 10px;
     }
 }
-

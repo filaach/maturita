@@ -1,116 +1,244 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.5;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.chat-container h1 {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
+    padding: 1rem;
+    background: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.search-input {
+.search-container .search-input {
     flex: 1;
-    padding: 8px 12px;
-    font-size: 0.95rem;
-    border: 1px solid #dbdbdb;
-    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 2rem 0 0 2rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
     outline: none;
-    transition: border 0.2s ease;
 }
 
-.search-input:focus {
-    border-color: #0095f6;
+.search-container .search-input:focus {
+    border-color: #2575fc;
+    background: #f9f9f9;
 }
 
-.search-btn {
-    background-color: #007bbd;
-    color: white;
-    padding: 8px;
-    border-radius: 6px;
+.search-container .btn.search-btn {
     border: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 2rem 2rem 0;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: opacity 0.3s ease;
 }
 
-.search-btn:hover {
-    background-color: #005fa3;
+.search-container .btn.search-btn:hover {
+    opacity: 0.85;
 }
 
-
-.container {
-    max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.users-list {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-h1 {
-    text-align: center;
+.users-list h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2575fc;
 }
 
-.uzivatele {
+.users-list ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
-.uzivatele li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.users-list ul li {
+    flex: 1 0 30%;
+    min-width: 120px;
 }
 
-.uzivatele li a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.zpravy {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.moje-zprava {
-    text-align: right;
-    color: #007bff;
-}
-
-.cizi-zprava {
-    text-align: left;
+.users-list ul li a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 2px solid #ddd;
+    background: #ffffff90;
     color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-form {
+.users-list ul li a:hover {
+    background: #2575fc;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.3);
+}
+
+.chat-messages {
+    padding: 1rem 1.5rem;
+    background: #fafafa;
+    min-height: 200px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.chat-messages h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2575fc;
+}
+
+.chat-messages .message {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.chat-messages .message strong {
+    color: #6a11cb;
+    flex-shrink: 0;
+}
+
+form[method="post"] {
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+form[method="post"] textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 1rem;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    outline: none;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
+form[method="post"] textarea:focus {
+    border-color: #2575fc;
+    background: #f9f9f9;
+}
+
+form[method="post"] button {
+    align-self: flex-end;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+form[method="post"] button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
+.chat-container p {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #2575fc;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        margin: 1rem;
+    }
+
+    .users-list ul li {
+        flex: 1 0 100%;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-container .search-input {
+        border-radius: 2rem;
+    }
+
+    .search-container .btn.search-btn {
+        border-radius: 2rem;
+        align-self: center;
+    }
+
+    form[method="post"] button {
+        width: 100%;
+    }
+}

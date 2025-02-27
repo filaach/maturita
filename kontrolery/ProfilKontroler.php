@@ -21,7 +21,7 @@ class ProfilKontroler extends Kontroler
 
         $this->data['uzivatel'] = $_SESSION;
         $this->data['prispevky'] = $this->profilModel->nactiPrispevkyUzivatele($userId);
-        $this->pohled = 'profil'; 
+        $this->pohled = 'profil';
 
         if (isset($parametry[0])) {
             if ($parametry[0] == 'smazat') {

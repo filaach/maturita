@@ -1,42 +1,24 @@
-<div class="intro-container">
-  <!-- Hlavička -->
-  <div class="intro-header">
-    <p>Spojujeme fitness nadšence a motivujeme k lepším výkonům.</p>
-  </div>
-
-  <!-- Dva sloupce: vlevo telefon, uprostřed text -->
-  <div class="main-content">
-    <!-- LEVÝ SLOUPEC: telefon s auto-scroll -->
-    <div class="phone-area">
-      <div class="phone-frame">
-        <!-- Obrázek telefonu -->
-        <img src="obrazky/telefon.png" alt="Telefon" class="phone-image" />
-
-        <!-- Posuvný obsah (obrázky) uvnitř telefonu -->
-        <div class="scroll-wrapper">
-          <div class="scroll-track">
-            <img src="obrazky/muz1.png" alt="Obrázek 1" />
-            <img src="obrazky/muz2.png" alt="Obrázek 2" />
-            <img src="obrazky/muz3.png" alt="Obrázek 3" />
-            <img src="obrazky/zena.png" alt="Obrázek 4" />
-          </div>
-        </div>
-      </div>
+<div class="hero-section">
+  <div class="hero-content">
+    <?= $uvod ?>
+    <div class="cta-buttons">
+      <a href="login" class="btn btn-primary">Příhlášení</a>
+      <a href="registrace" class="btn btn-secondary">Registrace</a>
     </div>
-
-    <!-- STŘEDNÍ SLOUPEC: Textový box + tlačítka pod ním -->
-    <div class="text-area">
-      <div class="text-box">
-        <?=$uvod?>
-      </div>
-
-      <div class="button-row">
-        <a href="login" class="button">Přihlášení</a>
-        <a href="registrace" class="button">Registrace</a>
-      </div>
+    <div class="cta-buttons">
+      <a href="prispevky" class="btn btn-secondary">Pokračovat bez registrace</a>
     </div>
   </div>
 
-  <!-- Tlačítko dole -->
-  <a href="prispevky" class="continue-button">Pokračovat bez registrace</a>
+  <div class="hero-image">
+    <img src="obrazky/muz2.png" alt="Fitness user" />
+    <div class="chat-bubble bubble-1">
+      <p>Jaké cviky doporučuješ na nohy?</p>
+      <span>10:00</span>
+    </div>
+    <div class="chat-bubble bubble-2">
+      <p>Skvělý progress, jen tak dá!</p>
+      <span>10:02</span>
+    </div>
+  </div>
 </div>

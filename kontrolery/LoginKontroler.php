@@ -4,7 +4,7 @@ class LoginKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
-        if(isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_id'])) {
             $this->presmeruj('ucet');
         }
         $this->hlavicka = [

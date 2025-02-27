@@ -6,12 +6,13 @@
             value="<?= isset($_GET['hledat']) ? $_GET['hledat'] : '' ?>">
         <button type="submit" class="btn search-btn">
             <i class="fa-solid fa-magnifying-glass"></i>
+            Hledat
         </button>
     </form>
 
     <?php if (!empty($uzivatele)): ?>
         <div class="users-list">
-            <h2>Uživatelé</h2>
+            <h2>Poslední uživatelé</h2>
             <ul>
                 <?php foreach ($uzivatele as $uz): ?>
                     <li>
@@ -30,7 +31,7 @@
             <?php if (!empty($zpravy)): ?>
                 <?php foreach ($zpravy as $zprava): ?>
                     <div class="message">
-                        <strong><?= htmlspecialchars($zprava['user_id'] == $_SESSION['user_id'] ? 'Já' : 'On') ?>:</strong>
+                        <strong><?= htmlspecialchars($zprava['user_id'] == $_SESSION['user_id'] ? 'Já' : 'Oni') ?>:</strong>
                         <?= htmlspecialchars($zprava['text']) ?>
                     </div>
                 <?php endforeach; ?>

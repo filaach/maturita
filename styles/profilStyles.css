@@ -1,4 +1,3 @@
-/* General Resets */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,191 +6,183 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fafafa; /* Light background similar to Instagram */
-    color: #262626; /* Dark text for contrast */
+    background-color: #fafafa;
+    color: #262626;
     line-height: 1.5;
 }
 
-/* Main Container */
 .container {
-    max-width: 900px; /* Increased width for content */
-    margin: 20px auto; /* Center the content */
+    max-width: 900px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff; /* White background for sections */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    display: grid; /* Use grid for layout */
-    grid-template-columns: 1fr 3fr; /* Sidebar and main content */
-    gap: 20px; /* Gap between columns */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
 }
 
-/* Sidebar Container */
 .sidebar {
-    background-color: #f9f9f9; /* Light background for sidebar */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside sidebar */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Header */
 .profile-header {
-    display: flex; /* Flexbox for layout */
-    align-items: center; /* Center items vertically */
-    margin-bottom: 20px; /* Space below header */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .profile-picture {
-    width: 80px; /* Fixed size for the profile picture */
-    height: 80px; /* Fixed size for the profile picture */
-    border-radius: 50%; /* Circular profile picture */
-    margin-right: 20px; /* Space between image and text */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 
 .profile-info h1 {
-    font-size: 24px; /* Larger font for username */
-    color: #262626; /* Dark color for username */
+    font-size: 24px;
+    color: #262626;
 }
 
 .profile-info p {
-    color: #999; /* Lighter color for bio */
+    color: #999;
 }
 
-/* Profile Stats */
 .profile-stats {
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between stats */
-    margin-bottom: 20px; /* Space below stats */
-    font-weight: bold; /* Bold text */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .profile-stats div {
-    text-align: center; /* Center text within each stat */
+    text-align: center;
 }
 
-/* Form Styles */
 form {
-    margin-bottom: 20px; /* Space between forms */
+    margin-bottom: 20px;
 }
 
 label {
-    display: block; /* Block for full width */
+    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 input[type="file"] {
-    margin-bottom: 10px; /* Space below input */
+    margin-bottom: 10px;
 }
 
 textarea {
-    width: 100%; /* Full width for the text area */
-    padding: 10px; /* Padding for comfort */
-    border: 1px solid #dbdbdb; /* Light border */
-    border-radius: 4px; /* Rounded corners */
-    margin-bottom: 10px; /* Space below text area */
-    resize: none; /* Prevent resizing */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
 }
 
-/* Button Styles */
 button.save-button,
 button.edit-button,
 button.delete-button {
-    background-color: #0095f6; 
-    color: white; /* White text for contrast */
+    background-color: #0095f6;
+    color: white;
     padding: 10px 15px;
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
-    margin-right: 5px; /* Space between buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px;
 }
 
 button.save-button:hover,
 button.edit-button:hover,
 button.delete-button:hover {
-    background-color: #ff3b30; /* Darker blue on hover */
+    background-color: #ff3b30;
 }
 
-/* Navigation Styles */
 .profile-nav {
-    margin: 20px 0; /* Space above and below navigation */
+    margin: 20px 0;
 }
 
-.profile-nav a, .profile-nav p {
-    text-decoration: none; /* Remove underline */
-    color: #0095f6; /* Instagram blue */
-    margin-right: 20px; /* Space between links */
-    font-weight: bold; /* Bold text */
+.profile-nav a,
+.profile-nav p {
+    text-decoration: none;
+    color: #0095f6;
+    margin-right: 20px;
+    font-weight: bold;
 }
 
 .profile-nav a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
-/* Posts Container */
 .posts-container {
-    margin-top: 20px; /* Space above posts */
+    margin-top: 20px;
 }
 
 .post-item {
-    border: 1px solid #dbdbdb; /* Light border around posts */
-    border-radius: 4px; /* Rounded corners */
-    padding: 10px; /* Padding for comfort */
-    margin-bottom: 10px; /* Space between posts */
-    position: relative; /* Position for absolute button placement */
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .post-item img {
-    max-width: 100%; /* Responsive images */
-    border-radius: 4px; /* Rounded corners */
+    max-width: 100%;
+    border-radius: 4px;
 }
 
-/* Edit and Delete Buttons in Post Item */
 .post-actions {
-    position: absolute; /* Absolute positioning */
-    top: 5px; /* Position from the top */
-    right: 10px; /* Position from the right */
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
 
 .post-actions button {
     background-color: #ff3b30;
-    color: white; /* White text for contrast */
+    color: white;
     padding: 5px 10px;
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
-    margin-right: 5px; /* Space between buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px;
 }
 
 .post-actions button.edit-button {
-    background-color: #0095f6; /* Blue for edit */
+    background-color: #0095f6;
 }
 
-/* Responsive Styles */
 @media (max-width: 600px) {
     .container {
-        grid-template-columns: 1fr; /* Single column layout on mobile */
+        grid-template-columns: 1fr;
     }
-    
+
     .sidebar {
-        display: none; /* Hide sidebar on mobile */
+        display: none;
     }
 
     .profile-header {
-        flex-direction: column; /* Stack items on smaller screens */
-        align-items: flex-start; /* Align items to the left */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .profile-picture {
-        margin-bottom: 10px; /* Space below image */
+        margin-bottom: 10px;
     }
 
     .profile-nav {
-        flex-direction: column; /* Stack navigation links */
+        flex-direction: column;
     }
 
-    .profile-nav a, .profile-nav p {
-        margin-bottom: 10px; /* Space below links */
+    .profile-nav a,
+    .profile-nav p {
+        margin-bottom: 10px;
     }
 }

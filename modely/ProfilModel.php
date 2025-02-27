@@ -6,7 +6,7 @@ class ProfilModel
     public function nactiPrispevkyUzivatele(int $userId): array
     {
         Databaze::pripoj('localhost', 'root', '', 'maturita');
-        return Databaze::dotazVsechny("SELECT * FROM post WHERE user_id = ?", [$userId]);
+        return Databaze::dotazVsechny("SELECT * FROM post WHERE user_id = ? AND room_id = 1", [$userId]);
     }
 
     public function smazPrispevek(int $postId): void

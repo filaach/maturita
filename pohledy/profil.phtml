@@ -5,17 +5,14 @@
     </div>
 
     <div class="main-content">
-        <!-- Profile Header -->
         <div class="profile-header">
-            <img src="pfp/muz3.png"
-                alt="Profilová fotka" class="profile-picture">
+            <img src="pfp/muz3.png" alt="Profilová fotka" class="profile-picture">
             <div class="profile-info">
                 <h1><?= htmlspecialchars($uzivatel['user_name']) ?></h1>
                 <p><?= htmlspecialchars($uzivatel['bio'] ?? 'Zatím žádné informace.') ?></p>
             </div>
         </div>
 
-        <!-- Profile Stats -->
         <div class="profile-stats">
             <div>
                 <span>0</span>
@@ -27,14 +24,13 @@
             </div>
         </div>
 
-        <!-- Profile Picture Change Form -->
         <form class="profile-upload" method="post" enctype="multipart/form-data">
             <label for="profilovka">Změnit profilovou fotku</label>
             <input type="file" id="profilovka" name="profilovka">
             <button class="save-button" type="submit">Změnit</button>
         </form>
 
-        <!-- Bio Edit Form -->
+
         <form class="profile-bio" method="post">
             <label for="bio">Editujte svůj popis:</label>
             <textarea id="bio" name="bio"
@@ -42,7 +38,7 @@
             <button class="save-button" type="submit">Uložit</button>
         </form>
 
-        <!-- Profile Navigation -->
+
         <div class="profile-nav">
             <a href="prispevky?liked=1">To se mi líbí</a>
             <br />
@@ -50,7 +46,7 @@
 
         </div>
 
-        <!-- User Posts -->
+
         <div class="posts-container">
             <?php if (!empty($prispevky)): ?>
                 <?php foreach ($prispevky as $prispevek): ?>

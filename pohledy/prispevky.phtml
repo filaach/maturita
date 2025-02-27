@@ -11,11 +11,11 @@
 <body>
 
     <div class="container">
-        <!-- Levý panel -->
+
         <div class="left-panel panel">
             <h2>Hledat uživatele</h2>
 
-            <!-- Vyhledávání -->
+
             <form method="get" class="search-container">
                 <input type="text" name="hledat" placeholder="Hledat uživatele..." class="search-input"
                     value="<?= isset($_GET['hledat']) ? $_GET['hledat'] : '' ?>">
@@ -24,9 +24,9 @@
                 </button>
             </form>
 
-            <!-- Tlačítko pro nahrání příspěvku -->
+
             <form method="get" action="vytvoritPrispevek">
-                <!-- From Uiverse.io by felipesntr -->
+
                 <button>
                     <span>
                         <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -39,8 +39,7 @@
 
             </form>
 
-            <!-- Upozornění -->
-            <!-- From Uiverse.io by vinodjangid07 -->
+
             <button class="button">
                 <svg class="bell" viewBox="0 0 448 512">
                     <path
@@ -54,7 +53,6 @@
 
         </div>
 
-        <!-- Střední panel (Příspěvky) -->
         <div class="middle-panel panel">
 
             <div class="prispevky-list">
@@ -76,11 +74,11 @@
                                 <img src="<?= htmlspecialchars($prispevek['picture']) ?>" width="400" alt="Prispevek">
                             <?php endif; ?>
 
-                            <!--  ikony -->
+
                             <div class="prispevek-akce">
                                 <a class="action-btn" href="prispevky/like/<?= $prispevek['id'] ?>"><i class="fa-regular fa-heart <?php if (isset($_SESSION['user_id']) && $prispevek['user_id'] == $_SESSION['user_id'])
                                       echo 'liked'; ?>"></i></a>
-                                <!-- Like -->
+
                                 <a class="action-btn" href="prispevky/comment/<?= $prispevek['id'] ?>"><i
                                         class="fa-regular fa-comment"></i></a> <!-- Komentář -->
                             </div>
@@ -92,7 +90,6 @@
             </div>
         </div>
 
-        <!-- Pravý panel (Filtry) -->
         <div class="right-panel panel">
             <h2>Filtry</h2>
             <div class="filters-box">

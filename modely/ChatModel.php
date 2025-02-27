@@ -20,8 +20,7 @@ class ChatModel
     public function ulozZpravu(int $userId, int $receiverId, string $zprava): void
     {
         $room = $this->vypisMistnost($userId, $receiverId);
-        if(!$room)
-        {
+        if (!$room) {
             $room['id'] = Databaze::vloz("INSERT INTO room (public) VALUES (0)");
             Databaze::vloz("INSERT INTO user_has_room (user_id, room_id) VALUES (?, ?), (?, ?)", [$userId, $room['id'], $receiverId, $room['id']]);
         }
