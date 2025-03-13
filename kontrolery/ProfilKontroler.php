@@ -6,7 +6,7 @@ class ProfilKontroler extends Kontroler
         if (!isset($_SESSION['user_id'])) {
             $this->presmeruj('login');
         }
-        Databaze::pripoj('localhost', 'root', '', 'maturita');
+        Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
         $this->profilModel = new ProfilModel();
 
         $this->hlavicka = [

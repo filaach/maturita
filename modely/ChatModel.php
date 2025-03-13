@@ -5,7 +5,7 @@ class ChatModel
     public function vypisUzivatele(): array
     {
 
-        Databaze::pripoj('localhost', 'root', '', 'maturita');
+        Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
         if (isset($_GET['hledat']))
             return Databaze::dotazVsechny("SELECT * FROM user WHERE userName LIKE ? AND id != ?", ["%" . $_GET['hledat'] . "%", $_SESSION['user_id']]) ?? [];
         else
@@ -14,7 +14,7 @@ class ChatModel
     public function vypisZpravy(int $userId, int $receiverId): array
     {
 
-        Databaze::pripoj('localhost', 'root', '', 'maturita');
+        Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
         return Databaze::dotazVsechny("SELECT p.* FROM post AS p WHERE p.room_id IN (SELECT r.id FROM room AS r JOIN user_has_room AS uhr ON r.id = uhr.room_id WHERE uhr.user_id IN (?, ?) AND r.public = 0 GROUP BY r.id HAVING COUNT(DISTINCT uhr.user_id) = 2)", [$userId, $receiverId]) ?? [];
     }
     public function ulozZpravu(int $userId, int $receiverId, string $zprava): void
@@ -31,7 +31,7 @@ class ChatModel
     private function vypisMistnost(int $userId, int $receiverId): array|bool
     {
 
-        Databaze::pripoj('localhost', 'root', '', 'maturita');
+        Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
         return Databaze::dotazJeden("SELECT r.id FROM room AS r JOIN user_has_room AS uhr ON r.id = uhr.room_id WHERE uhr.user_id IN (?, ?) AND r.public = 0 GROUP BY r.id HAVING COUNT(DISTINCT uhr.user_id) = 2", [$userId, $receiverId]);
     }
 }

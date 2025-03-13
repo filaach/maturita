@@ -8,7 +8,7 @@ class LoginModel
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $login = $_POST['username'];
 
-            Databaze::pripoj('localhost', 'root', '', 'maturita');
+            Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
             $user = Databaze::dotazJeden("SELECT * FROM user WHERE userName = ?", [$login]);
             if (!$user) {
                 header('Location: login?zprava=login');

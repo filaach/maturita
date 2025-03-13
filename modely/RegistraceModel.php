@@ -16,7 +16,7 @@ class RegistraceModel
                 header('Location: registrace?zprava=heslo');
                 exit;
             }
-            Databaze::pripoj('localhost', 'root', '', 'maturita');
+            Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
             $duplicate = Databaze::dotazJeden("SELECT * FROM user WHERE userName = ? OR email = ? OR phone = ?", [$login, $email, $telefon]);
             if ($duplicate) {
                 header('Location: registrace?zprava=existuje');

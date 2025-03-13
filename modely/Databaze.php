@@ -14,7 +14,7 @@ class Databaze
         if (self::$spojeni === null) {
             try {
                 self::$spojeni = new PDO(
-                    "mysql:host=$host;dbname=$databaze;charset=utf8",
+                    "mysql:host=db;dbname=$databaze;charset=utf8",
                     $uzivatel,
                     $heslo,
                     self::$nastaveni

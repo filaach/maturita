@@ -3,7 +3,7 @@ class UvodKontroler extends Kontroler
 {
     public function zpracuj(array $parametry): void
     {
-        Databaze::pripoj('localhost', 'root', '', 'maturita');
+        Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
         $this->hlavicka = [
             'titulek' => 'Úvod',
             'popis' => 'Stránka pro správu úvodu',

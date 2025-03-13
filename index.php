@@ -12,9 +12,10 @@ function autoloadFunkce(string $trida): void
 
 spl_autoload_register("autoloadFunkce");
 
-Databaze::pripoj('localhost','root','','maturita');
+Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
 
-$smerovac = new SmerovacKontroler();
-$smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
-$smerovac->vypisPohled();
-
+if (isset($_SERVER['REQUEST_URI'])) {
+    $smerovac = new SmerovacKontroler();
+    $smerovac->zpracuj(array($_SERVER['REQUEST_URI']));
+    $smerovac->vypisPohled();
+}

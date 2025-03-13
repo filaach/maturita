@@ -5,7 +5,7 @@ class UcetModel
 
     public function __construct()
     {
-        $this->db = Databaze::pripoj('localhost', 'root', '', 'maturita');
+        $this->db = Databaze::pripoj('localhost', 'root', 'ABCabc123', 'maturita');
     }
 
 
